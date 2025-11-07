@@ -1,0 +1,108 @@
+a:not(.button, .wp-block-button__link) {
+	color: $color__link-hover;
+	text-decoration: underline;
+	text-decoration-thickness: 1px;
+	border-radius: 1px;
+
+	&:visited {
+		//color: $color__link-hover;
+	}		
+
+	&:hover,
+	&:focus,
+	&:active {
+		color: $color__link-hover;
+		text-decoration: underline;
+		text-decoration-thickness: 2px;
+		text-decoration-style: dashed;
+	}
+
+	&:focus {
+		//outline: thin dotted;
+	}
+
+	&:hover,
+	&:active {
+		outline: 0;
+	}
+}
+
+a.sbtl-link {
+	text-decoration: none;
+	color: var(--sbtl-text-body);
+	font-family: $font__semibold;
+	display: flex;
+	align-items: center;
+
+	svg.arrow {
+		transform: rotate(180deg);
+		width: 1em;
+		height: 1em;
+		margin-left: 0.5em;
+
+		path {
+			fill: var(--sbtl-text-body);
+		}
+		line {
+			stroke: var(--sbtl-text-body);
+		}
+	}
+
+	&:hover, &:focus-visible {
+		color: var(--sbtl-link-hover);
+		text-decoration: none;
+
+		svg.arrow {
+			path {
+				fill: var(--sbtl-link-hover);
+			}
+			line {
+				stroke: var(--sbtl-link-hover);
+			}
+		}
+	}
+}
+
+/* SVG Icons (Social media) */
+
+a.icon {
+	text-decoration: none;
+	line-height: 0;
+	display: inline-block;
+	width: 1.375em;
+	height: 1.375em;
+	margin-right: 0.375em;
+
+	&:last-of-type {
+		margin-right: 0;
+	}
+}
+
+a.icon svg {
+	
+	width: 100%;
+	height: 100%;
+
+	path {
+		fill: currentColor;
+	}
+}
+
+.wp-block-social-links {
+	margin-right: 0;
+}
+
+li.wp-social-link {
+	background-color: transparent !important;
+	color: var(--sbtl-text-body) !important;
+
+	a:hover, a:focus {
+		background-color: transparent !important;
+		color: var(--sbtl-text-link-hover) !important;
+		transform: none !important;
+	}
+
+	&:hover {
+		transform: none !important;
+	}
+}

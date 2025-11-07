@@ -1,0 +1,153 @@
+.wp-block-columns.alignwide {
+	gap: 2em !important;
+}
+
+.wp-block-columns {
+	margin-top: 1.25em;
+	margin-bottom: 1.25em;
+}
+
+.wp-block-column {
+	position: relative;
+}
+
+.wp-block-media-text {
+	grid-gap: 2em;
+	position: relative;
+}
+
+.wp-block-buttons {
+	margin-top: 2.5em !important;
+}
+
+.wp-block-media-text .wp-block-media-text__content {
+	padding: 0;
+}
+
+.wp-block-tag-cloud {
+	margin-left: 1.5em;
+}
+
+li.wp-block-post::before {
+	content: none;
+}
+
+li.wp-block-post h3 {
+	font-family: $font__semibold;
+	margin-top: 0.2em;
+}
+
+li.wp-block-post h3 a {
+		text-decoration-color: $color__text-main;
+}
+
+.wp-block-post-template.is-flex-container {
+	margin: 0;
+}
+
+.wp-block-post-featured-image {
+	overflow: hidden;
+	height: 0;
+	padding-top: 65%;
+}
+
+.wp-block-post time {
+	font-family: $font__thin;
+}
+
+.wp-block-post-featured-image img {
+	height: 100%;
+	object-fit: cover;
+	position: absolute;
+	top: 0;
+	transition: 0.5s ease-out;
+}
+
+.wp-block-cover.alignfull {
+	@include total-wrap;
+}
+
+.wp-block-post.hover {
+
+	h3 a {
+		text-decoration: underline;
+	}
+
+	.wp-block-post-featured-image img {
+		transform: scale(2);
+		transition: 40s;
+		transition-delay: 0s;
+	}
+}
+
+@media screen and (min-width: 601px) {
+	.wp-block-media-text .wp-block-media-text__content *:first-child, .wp-block-column *:first-child {
+		margin-top: 0;
+	}
+}
+
+/*@media screen and (min-width: 480px) {
+	.wp-block-columns.alignwide {
+		gap: 6em !important;
+	}
+}*/
+
+.sbtl-hero-banner {
+	box-sizing: border-box;
+	.entry-header {
+		z-index: 9;
+		h1 {
+			font-size: 2.5em;
+		}
+		@media screen and (min-width: 650px) {
+			position: absolute;
+			max-width: 15em;
+
+			h1 {
+				text-align: left;
+			}
+		}
+		@media screen and (min-width: 1100px) {
+			max-width: 29em;
+
+			h1 {
+				font-size: 3.5em;
+			}
+		}
+	}
+}
+
+.nav-menu-list {
+
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+
+	.nav-menu {
+
+		ul {
+			list-style: none;
+			
+			li::marker {
+				content: none;
+			}
+
+			li a {
+				text-decoration: none !important;
+				color: unset;
+
+				&:hover, &:focus {
+					color: var(--sbtl-text-link-hover);
+				}
+			}
+		}
+
+		&:not(:last-child) {
+			margin-right: 1.5em;
+		}
+	}
+}
+
+.wp-block-group.alignfull {
+	@include total-wrap;
+}
+

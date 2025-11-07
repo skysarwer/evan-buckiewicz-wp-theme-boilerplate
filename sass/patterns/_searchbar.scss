@@ -1,0 +1,154 @@
+.search-form {
+	position: relative;
+	width: min-content;
+
+	input[type="search"] {
+		margin-top: 0;
+
+		&:focus {
+			outline: none;
+		}
+
+		&::placeholder, &:-ms-input-placeholder, &::-ms-input-placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+			color: $color__text-light;
+			opacity: 1; /* Firefox */
+		}
+	}
+
+	.search-btn {
+		position: absolute;
+		right: 0.625em;
+		top: 0.45em;
+		border: 0;
+		padding: 0;
+		margin: auto;
+	}
+}
+
+.search-container {
+	position: relative;
+
+	.typeahead__result, .search-loading {
+		display: none;
+		position: absolute;
+		background: var(--sbtl-bg);
+		width: 100%;
+		top: 3.625em;
+		box-shadow: var(--sbtl-box-shadow-light);
+	}
+	.typeahead__list {
+
+		padding: 0.75em 0;
+		margin: 0;
+
+		li {
+			list-style: none;
+			padding: 0em 2.5em;
+			margin: 0;
+			font-weight: 100;
+			font-size: 0.9em;
+			display: flex;
+			align-items: baseline;
+
+			&.typeahead__empty::before {
+				content: none;
+			}
+
+			a {
+				display: inline-block;
+				width: 100%;
+				padding: 0.5em 0;
+			}
+
+			a, a:hover, a:focus {
+				color: $color__text-light;
+				text-decoration: none !important;
+			}
+
+			&.active {
+				background-color: $menu_item_highlight; 
+            }
+
+			&.typeahead__group {
+				display: block;
+				font-family: $font__bold;
+				font-size: 1.8em;
+				padding: 0 0.5em;
+				a {
+					color: $color__text-main;
+				}
+
+				&:first-of-type::before {
+					content: none;
+				}
+
+
+
+				&:not(:first-of-type)::before {
+					content: '';
+					width: 100%;
+					height: 1em;
+					position: relative;
+					display: block;
+					background-size: 5.5em;
+					font-size: 1em;
+					margin-left: 0;
+					margin-right: 0;
+				}
+			}
+		}
+	}
+
+	&:focus-within {
+		.typeahead__result {
+			display: block;
+
+			&.hidden {
+				display: none;
+			}
+		}
+
+		&.loading {
+			.search-loading {
+				display: block;
+			}
+	
+			.typeahead__result {
+				display: none;
+			}
+		}
+	}
+}
+
+.search-btn {
+	border: none;
+	padding: 0;
+
+	svg {
+		width: 1.325em;
+		height: 1.325em;
+		fill: transparent;
+	}
+
+	&:hover, &:focus {
+		background: none;
+
+		.filltext {
+			fill: $color__link-hover;
+		}
+
+		.stroketext {
+			stroke: $color__link-hover;
+		}
+	}
+
+	&[aria-expanded="true"] {
+		.filltext {
+			fill: $color__text-main;
+		}
+
+		.stroketext {
+			stroke: $color__text-main;
+		}
+	}
+}

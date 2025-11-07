@@ -1,0 +1,230 @@
+.is-style-font-bold {
+    font-family: $font__bold;
+}
+
+.is-style-font-semibold {
+    font-family: $font__semibold;
+}
+
+.is-style-font-title {
+    font-family: $font__title;
+}
+
+.is-style-font-light {
+    font-family: $font__light;
+}
+
+.is-style-font-regular {
+    font-family: $font__main;
+}
+
+.is-style-font-heavy {
+    font-family: $font__bold;
+}
+
+.is-style-decorated {
+    position: relative;
+    &::before {
+        content: '';
+        width: 64%;
+        left: 18%;
+        height: 1px;
+        position: absolute;
+        border-top: 1.5px solid $color__accent;
+        top: calc(50% + 0.75px);
+    }
+}
+
+.is-style-subdued {
+    margin-bottom: 0.5em;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    font-family: $font__light;
+    font-size: 0.8em;
+}
+
+.sbtl-tabs.is-style-classic {
+    div[role="tablist"] button, .sbtl-tab-title {
+        border: none !important;
+        background: none !important;
+        padding-left: 0;
+        padding-right: 0;
+        margin-right: 1.5em;
+        border-radius: 0;
+        color: $color__text-light !important;
+
+        &:hover, &:focus, &[aria-selected="true"] {
+            background: none !important;
+            color: $color__link-hover !important;
+        }
+
+        &[aria-selected="true"] {
+            border-bottom: 2px solid !important;
+        }
+
+    }
+}
+
+.site-footer .wp-block-columns:last-child {
+    margin-bottom: 0;
+}
+
+@media screen and (max-width: 450px) {
+   .wp-block-group.has-background { 
+    --wp--preset--spacing--80: 2em !important; 
+    }
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+.wp-block-image.is-style-half-width {
+    @media screen and (min-width: 700px) {
+        width: 50%;
+
+        img, div {
+            width: 100%;
+        }
+    }
+}
+
+:where(.wp-block-group.has-background) {
+    padding: 1.25em 2.375em;
+}
+
+
+@media screen and (min-width: 1100px) {
+
+    .homepage-logo {
+        margin-top: 0;
+    }
+
+    .homepage-logo img {
+        width: 20em;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+    .homepage-logo img {
+        width: 30%;
+    }
+}
+
+@media screen and (min-width: 1900px) {
+	.sbtl-cover {top: 5em;}
+
+	.sbtl-cover img {object-position: 0 -14em;}
+
+	.homepage-logo { width: 100%; margin-bottom: 2em; }
+
+    .homepage-logo img {width: 35%; }
+	
+	.homepage-cta {
+		margin-bottom: 5em !important;
+	}
+		
+}
+
+
+.has-dark-red-background-color, .has-red-background-color, .has-light-red-background-color {
+	--sbtl-btn-shadow-accent: #B36A43;
+}
+
+.wp-block-image.is-style-image-card {
+	height: 25em;
+}
+
+.wp-block-image.is-style-image-card img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: bottom;
+}
+
+.cards .wp-block-column {
+	min-height: 20em;
+}
+
+.cards .wp-block-column .wp-block-image {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+
+.cards .wp-block-column .wp-block-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.wp-block-columns.service-columns {
+    gap: 3em !important;
+}
+
+.wp-block-columns.is-style-rounded-cards .wp-block-column {
+	border-radius: 100px;
+}
+
+.wp-block-columns.is-style-colonade .wp-block-column {
+	border-top-left-radius: 300px;
+	border-top-right-radius: 300px;
+	overflow: hidden;
+}
+
+.wp-block-columns.is-style-colonade .wp-block-column .wp-block-group {
+
+@media screen and (min-width: 480px) {
+    padding-left: 5em;
+    padding-right: 5em;
+}
+
+padding-top: 9em !important;
+	
+}
+
+.gallery-grid {
+    margin-bottom: 0;
+}
+
+@media screen and (min-width: 1100px) {
+    .media-text-offset .wp-block-media-text__content {
+        position: absolute;
+        width: 156%;
+        right: 0;
+        }
+}
+
+/** Sbtl Blocks */
+.sbtl-tabs div[role="tablist"] {
+	margin-bottom: 2.5em;
+
+    button {
+        margin-bottom: 1em;
+    }
+}
+
+.sbtl-tabs.is-style-default div[role="tablist"] button:not(:last-child) {
+	margin-right: 0.25em
+}
+
+/** Maybe move to wp core */
+.wp-block-column > .wp-block-image:first-child img {
+	width: 100%;
+}
+
+#primary.has-sidemenu .content-wrap article.page .entry-content .alignfull.iframe-wrap {
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
+
+
+/*A few utility classes*/
+.sbtl-rounded { 
+	border-radius: 100px; 
+}
+.sbtl-widebox {
+	flex-grow: 1.725 !important;
+}

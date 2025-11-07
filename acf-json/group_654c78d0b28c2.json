@@ -1,0 +1,63 @@
+{
+  "key": "group_654c78d0b28c2",
+  "title": "Structured Data",
+  "fields": [
+    {
+      "key": "field_654c78d1882aa",
+      "label": "Structured Data Type",
+      "name": "structured_data_type",
+      "aria-label": "",
+      "type": "select",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": { "width": "", "class": "", "id": "" },
+      "choices": {
+        "": "None",
+        "article": "Article",
+        "custom": "Custom"
+      },
+      "default_value": false,
+      "return_format": "value",
+      "multiple": 0,
+      "allow_null": 0,
+      "ui": 0,
+      "ajax": 0,
+      "placeholder": ""
+    },
+    {
+      "key": "field_654c79407564b",
+      "label": "Structured Data",
+      "name": "structured_data",
+      "aria-label": "",
+      "type": "textarea",
+      "instructions": "Provide json-ld formatted structured data. Do not include <script> tags.",
+      "required": 0,
+      "placeholder": "{ ... }",
+      "conditional_logic": [
+        [
+          { "field": "field_654c78d1882aa", "operator": "==", "value": "custom" }
+        ]
+      ],
+      "wrapper": { "width": "", "class": "", "id": "" },
+      "default_value": "",
+      "maxlength": "",
+      "rows": "",
+      "new_lines": ""
+    }
+  ],
+  "location": [
+    [
+      { "param": "post_type", "operator": "==", "value": "page" }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": [],
+  "active": true,
+  "description": "",
+  "show_in_rest": 0
+}

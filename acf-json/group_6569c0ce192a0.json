@@ -1,0 +1,39 @@
+{
+  "key": "group_6569c0ce192a0",
+  "title": "Thumbnail overlay",
+  "fields": [
+    {
+      "key": "field_6569c0cf22906",
+      "label": "Add overlay to thumbnail image",
+      "name": "with_overlay",
+      "aria-label": "",
+      "type": "true_false",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": { "width": "", "class": "", "id": "" },
+      "message": "This setting will add an opaque background overlay with blending effects to the thumbnail image.",
+      "default_value": 0,
+      "ui_on_text": "",
+      "ui_off_text": "",
+      "ui": 1
+    }
+  ],
+  "location": [
+    [
+      { "param": "post_type", "operator": "==", "value": "post" }
+    ],
+    [
+      { "param": "page_template", "operator": "==", "value": "tmpl-cover.php" }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "side",
+  "style": "seamless",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": [],
+  "active": true,
+  "description": "",
+  "show_in_rest": 0
+}

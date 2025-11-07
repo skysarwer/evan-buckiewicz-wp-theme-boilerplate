@@ -1,0 +1,36 @@
+{
+  "key": "group_6555e223a2e29",
+  "title": "Empty Parent Page",
+  "fields": [
+    {
+      "key": "field_6555e22499c63",
+      "label": "Empty Parent Page",
+      "name": "empty_parent_page",
+      "aria-label": "",
+      "type": "true_false",
+      "instructions": "",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": { "width": "", "class": "", "id": "" },
+      "message": "Check this field if this page is just meant to be a placeholder for a nested sidemenu category",
+      "default_value": 0,
+      "ui": 0,
+      "ui_on_text": "",
+      "ui_off_text": ""
+    }
+  ],
+  "location": [
+    [
+      { "param": "post_type", "operator": "==", "value": "page" }
+    ]
+  ],
+  "menu_order": 0,
+  "position": "side",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": [],
+  "active": true,
+  "description": "",
+  "show_in_rest": 0
+}

@@ -1,0 +1,310 @@
+{
+	"version": 2,
+	"settings": {
+		"blocks": {
+			"core/button": {
+				"typography": {
+					"fontSizes": [
+						{
+							"slug": "btn-small",
+							"size": "0.9em",
+							"name": "Small"
+						},
+						{
+							"slug": "btn-regular",
+							"size": "1.125em",
+							"name": "Normal"
+						}
+					]
+				}
+			},
+			"core/paragraph": {
+				"typography": {
+					"fontSizes": [
+						{
+							"slug": "small",
+							"size": "0.8em",
+							"name": "Small"
+						},
+						{
+							"slug": "normal",
+							"size": "1em",
+							"name": "Normal"
+						},
+						{
+							"slug": "large",
+							"size": "1.1em",
+							"name": "large"
+						},
+						{
+							"slug": "extra-large",
+							"size": "1.5em",
+							"name": "Extra Large"
+						},
+						{
+							"slug": "double",
+							"size": "2em",
+							"name": "Double"
+						},
+						{
+							"slug": "triple",
+							"size": "3em",
+							"name": "Triple"
+						}
+					]
+				},
+				"spacing": {
+					"margin": true,
+					"units": ["em"]
+				}
+			},
+			"core/group": {
+				"spacing": {
+					"padding": true,
+					"units": ["em"]
+				}
+			},
+			"core/column": {
+				"spacing": {
+					"padding": true,
+					"units": ["em"]
+				}
+			},
+			"core/heading": {
+				"typography": {
+					"fontSizes": [
+						{
+							"slug": "small",
+							"size": "0.8em",
+							"name": "Small"
+						},
+						{
+							"slug": "normal",
+							"size": "1em",
+							"name": "Normal"
+						},
+						{
+							"slug": "large",
+							"size": "1.1em",
+							"name": "large"
+						},
+						{
+							"slug": "extra-large",
+							"size": "1.5em",
+							"name": "Extra Large"
+						},
+						{
+							"slug": "double",
+							"size": "2em",
+							"name": "Double"
+						},
+						{
+							"slug": "huge",
+							"size": "2.5em",
+							"name": "Huge"
+						},
+						{
+							"slug": "triple",
+							"size": "3em",
+							"name": "Triple"
+						}
+					]
+				}
+			}
+		},
+		"color": {
+			"defaultPalette": false,
+			"defaultGradients": false,
+			"custom": true,
+			"link": true,
+            "palette": [
+				{
+					"slug": "marble",
+					"color": "var(--palette-marble)",
+					"name": "Marble"
+				},
+				{
+					"slug": "dark-marble",
+					"color": "var(--palette-dark-marble)",
+					"name": "Dark Marble"
+				},
+				{
+					"slug": "light-brown",
+					"color": "var(--palette-light-brown)",
+					"name": "Light Brown"
+				},
+				{
+					"slug": "dark-brown",
+					"color": "var(--palette-dark-brown)",
+					"name": "Dark Brown"
+				},
+				{
+					"slug": "light-green",
+					"color": "var(--palette-light-green)",
+					"name": "Light Green"
+				},
+				{
+					"slug": "green",
+					"color": "var(--palette-green)",
+					"name": "Green"
+				},
+				{
+					"slug": "dark-green",
+					"color": "var(--palette-dark-green)",
+					"name": "Dark Green"
+				},
+				{
+					"slug": "light-mauve",
+					"color": "var(--palette-light-mauve)",
+					"name": "Light Mauve"
+				},
+				{
+					"slug": "mauve",
+					"color": "var(--palette-mauve)",
+					"name": "Mauve"
+				},
+				{
+					"slug": "light-red",
+					"color": "var(--palette-light-red)",
+					"name": "Light Red"
+				},
+				{
+					"slug": "red",
+					"color": "var(--palette-red)",
+					"name": "Red"
+				},
+				{
+					"slug": "dark-red",
+					"color": "var(--palette-dark-red)",
+					"name": "Dark Red"
+				},
+				{
+					"slug": "sbtl-red",
+					"color": "var(--palette-sbtl-red)",
+					"name": "Genesis Red"
+				},
+				{
+					"slug": "orange",
+					"color": "var(--palette-orange)",
+					"name": "Orange"
+				},
+				{
+					"slug": "blue",
+					"color": "var(--palette-blue)",
+					"name": "Blue"
+				},
+                {
+					"slug": "white",
+					"color": "var(--palette-white)",
+					"name": "White"
+				},
+                {
+					"slug": "black",
+					"color": "var(--palette-black)",
+					"name": "Black"
+				}
+			]
+
+		},
+        "typography": {
+			"fontFamilies": [
+				{
+					"fontFamily": "var(--sbtl-font-main)",
+					"slug": "body",
+					"name": "Body Text"
+				},
+				{
+					"fontFamily": "var(--sbtl-font-title)",
+					"slug": "title",
+					"name": "Title"
+				},
+				{
+					"fontFamily": "var(--sbtl-font-bold)",
+					"slug": "bold",
+					"name": "Bold Text"
+				},
+				{
+					"fontFamily": "var(--sbtl-font-semibold)",
+					"slug": "semibold",
+					"name": "Semibold"
+				},
+				{
+					"fontFamily": "var(--sbtl-font-light)",
+					"slug": "light",
+					"name": "Light Text"
+				},
+				{
+					"fontFamily": "var(--sbtl-font-thin)",
+					"slug": "thin",
+					"name": "Thin Text"
+				}
+			],
+			"fontSizes": [
+				{
+					"slug": "small",
+					"size": "0.8em",
+					"name": "Small"
+				},
+				{
+					"slug": "btn-small",
+					"size": "0.9em",
+					"name": "Small"
+				},
+				{
+					"slug": "normal",
+					"size": "1em",
+					"name": "Normal"
+				},
+				{
+					"slug": "btn-regular",
+					"size": "1.125em",
+					"name": "Small"
+				},
+				{
+					"slug": "large",
+					"size": "1.25em",
+					"name": "large"
+				},
+				{
+					"slug": "extra-large",
+					"size": "1.5em",
+					"name": "Extra Large"
+				},
+				{
+					"slug": "double",
+					"size": "2em",
+					"name": "Double"
+				},
+				{
+					"slug": "huge",
+					"size": "2.5em",
+					"name": "Huge"
+				},
+				{
+					"slug": "triple",
+					"size": "3em",
+					"name": "Triple"
+				},
+				{
+					"slug": "simply-huge",
+					"size": "6em",
+					"name": "Simply Huge"
+				}
+			],
+			"letterSpacing": false
+			
+		},
+
+        "spacing": {
+            "margin": true,
+			"padding": true,
+            "units": ["em", "%"]
+        },
+        
+        "layout": {
+			"contentSize": "840px",
+			"wideSize": "1100px"
+		}
+
+	}
+}

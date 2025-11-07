@@ -1,0 +1,177 @@
+.cards-minimal-listing {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: baseline;
+
+    .card-minimal {
+
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: row-reverse;
+        margin-top: 1.5em;
+        margin-bottom: 1.5em;
+
+        width: 100%;
+
+        @media screen and (min-width: 600px) {
+            width: calc( 50% - 1rem );
+        }
+
+        @media screen and (min-width: 1100px) {
+            width: calc( 50% - 2.25rem );
+        }
+
+        a.card-minimal__link.sbtl-link {
+            font-family: $font__semibold;
+            svg.arrow {
+                transform: rotate(180deg);
+            }
+        }
+
+        ul {
+            padding-left: 1em;
+        }
+        
+
+        .card-minimal__title-wrap {
+            width: 60%;
+        }
+
+        .card-minimal__icon-wrap {
+            width: 30%;
+            margin-right: 10%;
+        }
+
+        .card-minimal__content {
+            width: 100%;
+            font-size: 0.9em;
+        }
+
+        .card-minimal__title-wrap, .card-minimal__content, .card-minimal__icon-wrap {
+            //height: auto;
+            grid-gap: 1.5em;
+        }
+
+        .card-minimal__title {
+
+            font-size: 1.25em;
+
+           @media screen and (min-width: 900px) {
+                font-size: 1.5em;
+           }
+           
+        }
+
+        .card-minimal__text.post {
+            color: $color__text-main;
+            font-size: 0.95em;
+            font-style: italic;
+        }
+
+        a.card-minimal__link {
+            color: inherit;
+            text-decoration: none;
+
+            &:focus-visible {
+                outline: none;
+
+                h3 {
+                    outline: 2px solid var(--sbtl-focus-indicator);
+                    outline-offset: 4px;
+                    transition: 0.2s ease-in;
+                }
+            }
+
+            &.sbtl-link {
+               
+                font-size: 0.95em;
+
+              
+            }
+        }
+
+        a.button {
+            display: block;
+            width: max-content;
+            margin-right: auto;
+            margin-left: auto;
+        }   
+
+        &.hover {
+
+            a.button {
+                background-color: var(--sbtl-btn-outline-hover-bg);
+                color: var(--sbtl-btn-outline-hover-text);
+            }
+
+        }
+
+        @media screen and (min-width: 1100px) {
+            &.stacked {
+
+                flex-direction: row;
+                align-items: flex-start;
+
+                .card-minimal__title-wrap {
+                    width: 100%;
+                }
+
+                .card-minimal__content {
+                    width: 60%;
+                }
+
+                a.button {
+                    margin-left: 0;
+                }
+            }
+
+            &.table {
+                display: grid; 
+                grid-template-columns: 1fr;
+                //width: calc( 50% - 2.25rem );
+                width: calc( 33% - 2.25rem );
+
+                .card-minimal__title-wrap {
+                    order: 2;
+                    width: 100%;
+                }
+
+                .card-minimal__icon-wrap {
+                    order: 1;
+                    width: 35%;
+                    margin: 0 auto;
+                    transform: scale(1.125);
+                }
+
+                .card-minimal__content {
+                    order: 3;
+                }
+            }
+        }
+    }
+}
+
+.card-minimal.hover {
+
+    .card-minimal__title {
+        text-decoration: underline;
+    }
+    
+    // @todo : refactor with button link markup
+    a.card-minimal__link.sbtl-link {
+        color: var(--sbtl-text-link-hover);
+        svg {
+
+            path {
+                fill: var(--sbtl-text-link-hover);
+            }
+
+            line {
+                stroke: var(--sbtl-text-link-hover);
+            }
+        }
+    }
+}

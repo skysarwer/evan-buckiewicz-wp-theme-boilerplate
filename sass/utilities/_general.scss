@@ -1,0 +1,25 @@
+.margin-0, .margin-top-0 {
+    margin-top: 0;
+}
+
+.margin-0, .margin-bottom-0 {
+    margin-bottom: 0;
+}
+
+.sticky-top {
+    @media screen and (min-width: 782px) {
+        position: sticky;
+        top: 3.5em;
+    }
+}
+
+.desktop-row-reverse {
+    @media screen and (min-width: 782px) {
+        flex-direction: row-reverse;
+    }
+}
+
+.flex {
+    display: flex;
+    position: relative;
+} 

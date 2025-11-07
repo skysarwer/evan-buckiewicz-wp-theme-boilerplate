@@ -1,0 +1,33 @@
+/*--------------------------------------------------------------
+# Variables
+--------------------------------------------------------------*/
+@import "../../abstracts/typography";
+@import "../../abstracts/structure";
+@import "../../abstracts/mixins";
+
+
+.editor-styles-wrapper{
+		
+	.is-root-container.wp-block-post-content {
+		padding-left: $spacing__default-sm;
+		padding-right: $spacing__default-sm;
+
+		@media screen and (min-width: 600px) { 
+			padding-left: $spacing__default-md;
+			padding-right: $spacing__default-md;
+		}
+
+		@media screen and (min-width: 1100px) { 
+			padding-left: $spacing__default-lg;
+			padding-right: $spacing__default-lg;
+			margin: 0 auto;
+			width: 60vw !important;
+			max-width: 90ch !important;
+		}
+
+		.alignwide {
+			width: 100% !important;
+			margin-left: 0 !important;
+		}
+	}
+}

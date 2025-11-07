@@ -1,0 +1,85 @@
+ul,
+ol {
+	margin: 1.25em;
+	padding-left: 0;
+
+	li::marker {
+		color: var(--sbtl-marker-color);
+	}
+}
+
+ul li {
+	position: relative;
+	&::marker {
+		content: '\25CF\2002';
+	}
+}
+
+ol {
+	list-style: decimal;
+	li::marker {
+		font-family: $font__bold;
+	}
+}
+
+ol li {
+	&::marker {
+		color: $color__text-main;
+		font-family: $font__semibold;
+	}
+}
+
+ul li, ol li {
+	margin-bottom: 1em;
+	line-height: 1.8;
+}
+
+li ul, li ol {
+	margin-top: 0.5em
+}
+
+li ul li, li ol li {
+	margin-bottom: 0.5em;
+}
+
+li ul li::marker {
+	content: '\25CB\2002';
+}
+
+ol > li > ol {
+
+	list-style: lower-alpha;
+	
+	> li {
+
+		> ol {
+			list-style: lower-roman;
+
+			> li > ol {
+				list-style: decimal;
+				li::marker {
+					font-family: $font__semibold;
+				}
+			}
+		}
+	}
+}
+
+li > ul,
+li > ol {
+	margin-bottom: 0.25em;
+	margin-top: 0.25em;
+	margin-left: 1.5em;
+}
+
+dt {
+	font-family: $font__bold;
+}
+
+dd {
+	margin: 1.25em 2em;
+}
+
+nav li::marker, div[role="navigation"] li::marker {
+	content: none !important;
+}

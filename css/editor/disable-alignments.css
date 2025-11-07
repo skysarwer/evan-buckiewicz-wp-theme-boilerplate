@@ -1,0 +1,51 @@
+/*--------------------------------------------------------------
+# Variables
+--------------------------------------------------------------*/
+:root {
+  --sbtl-font-main: latoregular, sans-serif;
+  --sbtl-font-bold: latoheavy, sans-serif;
+  --sbtl-font-title: playfair-display, serif;
+  --sbtl-font-semibold: latosemibold, sans-serif;
+  --sbtl-font-light: latolight, sans-serif;
+  --sbtl-font-thin: latothin, sans-serif;
+  --sbtl-font-code: latoregular, sans-serif;
+  --sbtl-font-pre: latoregular, sans-serif;
+  --sbtl-font-line-height-body: 1.5;
+  --sbtl-font-line-height-pre: 1.6;
+  --sbtl-input-font-size: 1em;
+}
+
+:root {
+  --sbtl-spacing-default-lg: 4.5rem;
+  --sbtl-spacing-default-md: 2rem;
+  --sbtl-spacing-default-sm: 1rem;
+  --sbtl-spacing-content-lg: 13.8rem;
+  --sbtl-spacing-content-md: 1rem;
+  --sbtl-spacing-content-sm: 0rem;
+}
+
+.editor-styles-wrapper .is-root-container.wp-block-post-content {
+  padding-left: var(--sbtl-spacing-default-sm);
+  padding-right: var(--sbtl-spacing-default-sm);
+}
+@media screen and (min-width: 600px) {
+  .editor-styles-wrapper .is-root-container.wp-block-post-content {
+    padding-left: var(--sbtl-spacing-default-md);
+    padding-right: var(--sbtl-spacing-default-md);
+  }
+}
+@media screen and (min-width: 1100px) {
+  .editor-styles-wrapper .is-root-container.wp-block-post-content {
+    padding-left: var(--sbtl-spacing-default-lg);
+    padding-right: var(--sbtl-spacing-default-lg);
+    margin: 0 auto;
+    width: 60vw !important;
+    max-width: 90ch !important;
+  }
+}
+.editor-styles-wrapper .is-root-container.wp-block-post-content .alignwide {
+  width: 100% !important;
+  margin-left: 0 !important;
+}
+
+/*# sourceMappingURL=disable-alignments.css.map */

@@ -1,0 +1,29 @@
+// Define CSS variables in the :root selector
+:root {
+  --sbtl-font-main: latoregular, sans-serif;
+  --sbtl-font-bold: latoheavy, sans-serif;
+  --sbtl-font-title: playfair-display, serif;
+  --sbtl-font-semibold: latosemibold, sans-serif;
+  --sbtl-font-light: latolight, sans-serif;
+  --sbtl-font-thin: latothin, sans-serif;
+  --sbtl-font-code: latoregular, sans-serif;
+  --sbtl-font-pre: latoregular, sans-serif;
+  --sbtl-font-line-height-body: 1.5;
+  --sbtl-font-line-height-pre: 1.6;
+
+  --sbtl-input-font-size: 1em;
+}
+
+// Map SCSS variables to the CSS variables
+// stylelint-disable value-keyword-case
+$font__main: var(--sbtl-font-main);
+$font__bold: var(--sbtl-font-bold);
+$font__title: var(--sbtl-font-title);
+$font__semibold: var(--sbtl-font-semibold);
+$font__light: var(--sbtl-font-light);
+$font__thin: var(--sbtl-font-thin);
+// stylelint-enable value-keyword-case
+$font__code: var(--sbtl-font-code);
+$font__pre: var(--sbtl-font-pre);
+$font__line-height-body: var(--sbtl-font-line-height-body);
+$font__line-height-pre: var(--sbtl-font-line-height-pre);

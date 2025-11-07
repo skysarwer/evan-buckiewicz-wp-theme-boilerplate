@@ -1,0 +1,202 @@
+# Copyright (C) 2020 Automattic
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: sbtl\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/_s\n"
+"POT-Creation-Date: 2024-01-18 01:11-0500\n"
+"PO-Revision-Date: 2024-01-18 01:47-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr_CA\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Poedit 3.4.2\n"
+"X-Domain: _s\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: functions.php:297
+msgid "Medium Semilarge"
+msgstr "Moyen Semigrand"
+
+#: functions.php:298
+msgid "Medium Large"
+msgstr "Moyen Grand"
+
+#: inc/navigation.php:43 inc/navigation.php:48
+#, php-format
+msgid "%1$s sub-menu"
+msgstr "Sous-menu de %1$s"
+
+#: inc/post-types.php:7 inc/post-types.php:9
+msgid "Category Footers"
+msgstr "Pieds de page de catégorie"
+
+#: inc/post-types.php:8
+msgid "Category Footer"
+msgstr "Pied de page de catégorie"
+
+#: inc/post-types.php:68
+msgid "Services"
+msgstr "Services"
+
+#: inc/post-types.php:69
+msgid "Service"
+msgstr "Service"
+
+#: inc/post-types.php:87
+msgid "FAQs"
+msgstr "FAQ"
+
+#: inc/post-types.php:88
+msgid "FAQ"
+msgstr "FAQ"
+
+#: inc/post-types.php:109
+msgid "FAQ Categories"
+msgstr "Catégories de FAQ"
+
+#: inc/post-types.php:110
+msgid "FAQ Category"
+msgstr "Catégorie de FAQ"
+
+#: inc/post-types.php:111
+msgid "Search FAQ Categories"
+msgstr "Rechercher des catégories de FAQ"
+
+#: inc/post-types.php:112
+msgid "All FAQ Categories"
+msgstr "Toutes les catégories de FAQ"
+
+#: inc/post-types.php:113
+msgid "Parent FAQ Category"
+msgstr "Catégorie de FAQ parente"
+
+#: inc/post-types.php:114
+msgid "Parent FAQ Category:"
+msgstr "Catégorie de FAQ parente :"
+
+#: inc/post-types.php:115
+msgid "Edit FAQ Category"
+msgstr "Modifier la catégorie de FAQ"
+
+#: inc/post-types.php:116
+msgid "Update FAQ Category"
+msgstr "Mettre à jour la catégorie de FAQ"
+
+#: inc/post-types.php:117
+msgid "Add New FAQ Category"
+msgstr "Ajouter une nouvelle catégorie de FAQ"
+
+#: inc/shortcodes.php:19 inc/shortcodes.php:303
+msgid "View all"
+msgstr "Voir tout"
+
+#: inc/shortcodes.php:287
+msgid "Latest publications"
+msgstr "Dernières publications"
+
+#: inc/shortcodes.php:485
+#, php-format
+msgid "Your %s is loading, thank you for your patience."
+msgstr "Votre %s est en cours de chargement, merci de votre patience."
+
+#: inc/shortcodes.php:487
+msgid "Loading, please wait..."
+msgstr "Chargement, veuillez patienter..."
+
+#: inc/template-functions.php:68 inc/template-functions.php:69
+#: inc/template-functions.php:70 inc/template-functions.php:71
+#: inc/template-functions.php:72 inc/template-functions.php:73
+#, php-format
+msgid "Share on %s"
+msgstr "Partager sur %s"
+
+#: page.php:55 page.php:56 single.php:39 single.php:40
+#, php-format
+msgid "%1$s navigation"
+msgstr "Navigation %1$s"
+
+#: page.php:67 page.php:68 single.php:52 single.php:53 tmpl-cover.php:61
+#: tmpl-cover.php:62
+msgid "Menu"
+msgstr "Menu"
+
+#: page.php:67 single.php:52 tmpl-cover.php:61
+msgid "Close"
+msgstr "Fermer"
+
+#: searchform.php:6
+msgid "Search"
+msgstr "Rechercher"
+
+#: template-parts/content-none.php:33
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+"Prêt à publier votre premier article ? <a href=\"%1$s\">Commencez ici</a>."
+
+#: template-parts/content-page.php:67 template-parts/content-page.php:71
+#: template-parts/content-single.php:13 template-parts/content-single.php:17
+#, php-format
+msgid "Written by %s"
+msgstr "Écrit par %s"
+
+#: template-parts/content-single.php:173
+msgid "Previous"
+msgstr "Précédent"
+
+#: single.php:174
+msgid "Next"
+msgstr "Suivant"
+
+#: template-parts/content-page.php:69 template-parts/content-single.php:15
+#, php-format
+msgid "Brought to you by %s"
+msgstr "Présenté par %s"
+
+#: template-parts/content-page.php:77
+msgid "Last updated:"
+msgstr "Dernière mise à jour :"
+
+#: template-parts/content-page.php:110
+msgid ""
+"If you’re enjoying our content, please consider sharing this page with your "
+"communities. <br/> It helps us out a lot."
+msgstr ""
+"Si vous appréciez notre contenu, pensez à partager cette page avec vos "
+"communautés. <br/> Cela nous aide beaucoup."
+
+#: template-parts/content-page.php:124
+#, php-format
+msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+msgstr "Modifier <span class=\"screen-reader-text\">%s</span>"
+
+#: template-parts/content-single.php:69 template-parts/content.php:63
+#, php-format
+msgid "by %s"
+msgstr "par %s"
+
+#: template-parts/content-single.php:99
+#, php-format
+msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr "Continuer la lecture<span class=\"screen-reader-text\"> \"%s\"</span>"
+
+#: template-parts/content-single.php:161
+msgid "Back to top"
+msgstr "Retour en haut"
+
+#: template-parts/content-single.php:166
+msgid ""
+"If you’re enjoying our content, please consider sharing this page with your "
+"communities. \n"
+"\t\t\t<br/> It helps us out a lot."
+msgstr ""
+"Si vous appréciez notre contenu, pensez à partager cette page avec vos "
+"communautés. \n"
+"\t\t\t<br/> Cela nous aide beaucoup."

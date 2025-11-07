@@ -1,0 +1,185 @@
+/*--------------------------------------------------------------
+# Variables
+--------------------------------------------------------------*/
+@import "../../abstracts/colors";
+@import "../../abstracts/typography";
+@import "../../abstracts/structure";
+@import "../../abstracts/svg";
+@import "../../abstracts/mixins";
+
+// Define the fonts path variable
+$fonts-path: '../../fonts/';
+
+.editor-styles-wrapper{
+
+	overflow-x: hidden;
+
+	background: $color__background-body; 
+
+	font-size: 1.125rem;
+
+	.sbtl-entry-header {
+		@media screen and (min-width: 1100px) {
+			box-sizing: border-box;
+			padding: 0 4em;
+		}
+	}
+
+	.edit-post-visual-editor__post-title-wrapper {
+		display: flex;
+		justify-content: center;
+		position: relative;
+		
+		h1 {
+			@include entry-title; 
+		}
+	}
+
+	.wp-block-post-content {
+		padding-left: $spacing__total-sm;
+		padding-right: $spacing__total-sm;
+
+		@media screen and (min-width: 600px) { 
+			padding-left: $spacing__total-md;
+			padding-right: $spacing__total-md;
+			max-width: 150ch;
+		}
+
+		@media screen and (min-width: 1100px) { 
+			padding-left: $spacing__total-lg;
+			padding-right: $spacing__total-lg;
+			margin: 0 auto;
+			max-width: 150ch;
+		}
+	}
+
+	.wp-block-quote {
+		border-left: none;
+		padding-left: 0;
+	}
+	blockquote, q {
+		quotes: unset;
+	}
+
+	/*--------------------------------------------------------------
+	# Elements
+	--------------------------------------------------------------*/
+	@import "../../elements/buttons";
+	@import "../../elements/links";
+	@import "../../elements/lists";
+	@import "../../elements/media";
+	@import "../../elements/copy";
+	@import "../../elements/tables";
+
+	/*--------------------------------------------------------------
+	# Typography
+	--------------------------------------------------------------*/
+
+	color: $color__text-main;
+	font-family: $font__main;
+	line-height: $font__line-height-body;
+	
+	
+	/*--------------------------------------------------------------
+	# Media
+	--------------------------------------------------------------*/
+	
+	@import "../../patterns/captions";
+	@import "../../patterns/galleries";
+	@import "../../patterns/media";
+
+	/*--------------------------------------------------------------
+	# General
+	--------------------------------------------------------------*/
+
+	/* Normalize
+	--------------------------------------------- */
+	@import "../../misc/normalize";
+
+
+	/*--------------------------------------------------------------
+	# Utilities
+	--------------------------------------------------------------*/
+
+	/* Accessibility
+	--------------------------------------------- */
+	@import "../../utilities/accessibility";
+
+	/* Blocks
+	--------------------------------------------- */
+	@import "../../utilities/blocks";
+
+	/* General Utilities
+	--------------------------------------------- */
+	@import "../../utilities/general";
+
+	/* WP-Core Utilities
+	--------------------------------------------- */
+	@import "../../structure/content";
+	@import "../../structure/wp-core";
+	@import "../../abstracts/fonts";
+
+	/* Alignments
+	--------------------------------------------- */
+	@import "../../utilities/alignments";
+
+	.block-editor-block-list__layout.is-root-container {
+		> * {
+			max-width: unset !important;
+		}
+	}
+
+	button.components-button {
+		text-transform: none;
+		box-shadow: none;
+		text-shadow: none; 
+	}
+
+	.sbtl-tab-item.is-selected .sbtl-tab-title, .sbtl-tab-item.has-child-selected .sbtl-tab-title {
+		background-color: $color__text-main !important;
+		color: $color__background-body !important; 
+	}
+
+	.sbtl-tabs.is-style-classic {
+		.sbtl-tab-item.is-selected .sbtl-tab-title, .sbtl-tab-item.has-child-selected .sbtl-tab-title {
+			background-color: transparent !important;
+			color: $color__link-hover !important;
+			border-bottom: 2px solid !important;
+		}
+	}
+	.block-editor-block-list__layout.is-root-container > .alignwide {
+		max-width: unset;
+		@media screen and (min-width: 600px) { 
+			width: calc(100% + ((#{$spacing__content-md} + #{$spacing__content-md})));
+			margin-left: calc(-1 * (#{$spacing__content-md})) !important;
+		} 
+	
+		@media screen and (min-width: 1100px) { 
+			width: calc(100% + ((#{$spacing__content-lg} + #{$spacing__content-lg})));
+			margin-left: calc(-1 * (#{$spacing__content-lg})) !important;
+		}
+	
+		box-sizing: border-box;
+	}
+
+	.block-editor-block-list__block.alignfull {
+		box-sizing: border-box;
+		width: calc(100% + #{$spacing__total-sm} + #{$spacing__total-sm}) !important;
+		margin-left: calc(-1 * #{$spacing__total-sm}) !important;
+
+		@media screen and (min-width: 600px) { 
+			width: calc(100% + #{$spacing__total-md} + #{$spacing__total-md}) !important;
+			margin-left: calc(-1 * #{$spacing__total-md}) !important;
+		}
+
+		@media screen and (min-width: 1100px) { 
+			width: calc(100% + #{$spacing__total-lg} + #{$spacing__total-lg}) !important;
+			margin-left: calc(-1 * #{$spacing__total-lg}) !important;
+		}	
+	}
+
+	.wp-block.aligncenter {
+		width: min-content;
+	}
+
+}

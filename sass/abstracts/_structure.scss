@@ -1,0 +1,23 @@
+// Define CSS variables in the :root selector
+:root {
+  --sbtl-spacing-default-lg: 4.5rem;
+  --sbtl-spacing-default-md: 2rem;
+  --sbtl-spacing-default-sm: 1rem;
+
+  --sbtl-spacing-content-lg: 13.8rem;
+  --sbtl-spacing-content-md: 1rem;
+  --sbtl-spacing-content-sm: 0rem;
+}
+
+// Map SCSS variables to the CSS variables
+$spacing__default-lg: var(--sbtl-spacing-default-lg);
+$spacing__default-md: var(--sbtl-spacing-default-md);
+$spacing__default-sm: var(--sbtl-spacing-default-sm);
+
+$spacing__content-lg: var(--sbtl-spacing-content-lg);
+$spacing__content-md: var(--sbtl-spacing-content-md);
+$spacing__content-sm: var(--sbtl-spacing-content-sm);
+
+$spacing__total-lg: calc(#{$spacing__content-lg} + #{$spacing__default-lg});
+$spacing__total-md: calc(#{$spacing__content-md} + #{$spacing__default-md});
+$spacing__total-sm: calc(#{$spacing__content-sm} + #{$spacing__default-sm});

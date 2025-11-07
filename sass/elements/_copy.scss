@@ -1,0 +1,132 @@
+p {
+	margin-bottom: 1.25em;
+	line-height: 2;
+}
+
+p.small {
+	font-size: 0.8em;
+}
+
+dfn,
+cite,
+em,
+i {
+	font-style: italic;
+}
+
+blockquote {
+	border-left: none;
+	margin-top: 1.8em;
+	margin-bottom: 1.8em;
+	position: relative;
+	padding-top: 1.8em;
+	padding-left: 0.25em;
+	line-height: 2;
+
+	
+
+	&::before {
+		content: '';
+		position: absolute;
+		left: -2em;
+		top: 0;
+		width: 3.5em;
+		height: 3.5em;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-size: contain;
+		background-image: url(svg-encode(open-quote("#D5D1B2", "#140F09")));
+	}
+	
+	cite {
+		position: relative;
+		color: $color__text-main;
+		font-family: $font__light;
+	}
+
+	
+	cite::before {
+		content: '\2014';
+		color: var(--sbtl-text-body);
+		font-style: initial;
+		font-size: 1.75em;
+		margin-left: -0.075em;
+		margin-right: 0.25em;
+		font-family: $font__light;
+		display: inline-block;
+		vertical-align: sub;
+	}
+
+	> p:first-child {
+		margin-top: 0;
+	}
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	clear: both;
+	font-family: $font__bold;
+	font-weight: 400;
+	letter-spacing: 0.0125em;
+	
+	a {
+		text-decoration: none;
+	}
+}
+
+h1 {
+	font-size: 2.5em;
+}
+
+h2 {
+	font-size: 2em;
+}
+
+h3 {
+	font-size: 1.75em;
+}
+
+h4 {
+	font-size: 1.625em;
+}
+
+h5, h6 {
+	font-size: 1.5em;
+}
+
+
+address {
+	margin: 0 0 1.5em;
+}
+
+pre {
+	background: $color__background-pre;
+	font-family: $font__pre;
+	line-height: $font__line-height-pre;
+	margin-bottom: 1.6em;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.6em;
+}
+
+code,
+kbd,
+tt,
+var {
+	font-family: $font__code;
+}
+
+abbr,
+acronym {
+	border-bottom: 1px dotted var(--sbtl-text-body);
+	cursor: help;
+}
+
+big {
+	font-size: 125%;
+}

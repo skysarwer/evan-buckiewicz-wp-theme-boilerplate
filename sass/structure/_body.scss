@@ -1,0 +1,55 @@
+body {
+	background: $color__background-body; // Fallback for when there is no custom background color defined.
+	font-size: 1rem;
+	overflow-x: hidden;
+
+	@media screen and (min-width: 1280px) {
+		font-size: 1.125rem;
+	}
+
+	@media screen and (min-width: 1650px) {
+		font-size: 1.285em;
+	}
+	
+}
+
+#page {
+	height: 100%;
+	position: relative;
+}
+
+body,
+input,
+select,
+optgroup,
+textarea {
+	color: $color__text-main;
+	font-family: $font__main;
+	line-height: $font__line-height-body;
+}
+
+*:focus-visible {
+	outline: 2px solid var(--sbtl-focus-indicator);
+	outline-offset: 4px;
+	transition: 0.2s ease-in;
+}
+
+::selection {
+	background: var(--sbtl-highlight-bg);
+	color: var(--sbtl-highlight-text);
+}
+
+::-moz-selection {
+	background: var(--sbtl-highlight-bg);
+	color: var(--sbtl-highlight-text);
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+
+iframe {
+	max-width: unset !important;
+	width: 100%;
+}

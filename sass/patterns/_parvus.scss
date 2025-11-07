@@ -1,0 +1,432 @@
+:root {
+    --parvus-transition-duration: 300ms;
+    --parvus-transition-timing-function: cubic-bezier(0.4, 0, 0.22, 1);
+    --parvus-overlay-color: rgba(0, 0, 0, 0.86);
+    --parvus-button-text: hsl(0, 0%, 100%);
+    --parvus-loader-background-color: $color__accent-light;
+    --parvus-loader-color: $color__accent;
+  }
+  
+  /**
+   * Parvus trigger
+   *
+   */
+  .parvus-zoom {
+    display: block;
+    position: relative;
+  }
+  .parvus-zoom__indicator {
+    align-items: center;
+    background-color: $color__text-main;
+    color: var(--parvus-button-text);
+    justify-content: center;
+    line-height: 1;
+    padding: 0.5em;
+    position: absolute;
+    opacity: 0.5;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: hard-light;
+    z-index: 5;
+  }
+
+  .parvus-zoom .parvus-zoom__indicator {
+    display: none;
+  }
+
+  .parvus-zoom:hover .parvus-zoom__indicator, .parvus-zoom:focus .parvus-zoom__indicator {
+    display: flex;
+  }
+
+  .parvus-zoom__indicator svg {
+    fill: none;
+    height: 25%;
+    pointer-events: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.5;
+    stroke: currentColor;
+    width: 25%;
+  }
+  .parvus-zoom img {
+    display: block;
+  }
+  
+  /**
+   * Parvus
+   *
+   */
+  .parvus {
+    align-items: center;
+    bottom: 0;
+    box-sizing: border-box;
+    contain: strict;
+    display: flex;
+    justify-content: center;
+    left: 0;
+    line-height: 1.667;
+    overflow: hidden;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 9000001;
+
+    &.expanded {
+      .parvus__slide > div:first-child {
+        top: 0;
+        padding: 0 !important;
+        padding-left: 0;
+        padding-right: 0;
+        padding-top: 0;
+        padding-bottom: 0;
+        width: unset;
+        height: unset;
+        border-radius: 0;
+        max-height: unset;
+        max-width: unset;
+      }
+      
+      .parvus__slide img {
+        min-height: 100vh;
+        min-width: 97.7vw;
+      }
+      
+      .parvus__slide {
+        height: 100%;
+        overflow: auto;
+      }
+      
+      .parvus__slide .parvus__caption {
+      position: fixed;
+      bottom: 0;
+      background: var(--parvus-overlay-color);
+      display: block;
+      max-width: unset;
+      padding-bottom: 6em;
+      padding-top: 1em;
+      text-align: center;
+      opacity: 0;
+      z-index: 999999;
+      /*&::after {
+        content: '';
+        position: absolute;
+        top: -2em;
+        left: 0;
+        width: 100%;
+        height: 2em;
+        background: linear-gradient(270deg, rgba(255,255,255,0) 0%, var(--parvus-overlay-color) 100%);
+        background: -moz-linear-gradient(270deg, rgba(255,255,255,0) 0%, var(--parvus-overlay-color) 100%);
+        background: -ms-linear-gradient(270deg, rgba(255,255,255,0) 0%, var(--parvus-overlay-color) 100%);
+        background: -webkit-linear-gradient(270deg, rgba(255,255,255,0) 0%, var(--parvus-overlay-color) 100%);
+        background: -o-linear-gradient(270deg, rgba(255,255,255,0) 0%, var(--parvus-overlay-color) 100%);	
+        pointer-events: none;
+      }*/
+      }
+      
+      .parvus__slide .parvus__caption:hover {
+        opacity: 1;
+      } 
+      
+      
+      .parvus__toolbar:hover {
+        background: var(--parvus-overlay-color);
+      }
+      
+      .parvus__toolbar:hover ~  .parvus__slider .parvus__slide .parvus__caption {
+        opacity: 1;
+      } 
+    }
+  }
+  .parvus *, .parvus *::before, .parvus *::after {
+    box-sizing: border-box;
+  }
+  .parvus[aria-hidden=true] {
+    display: none;
+  }
+  .parvus__overlay {
+    background-color: var(--parvus-overlay-color);
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .parvus__slider {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .parvus__slider[aria-hidden=true] {
+    display: none;
+  }
+  @media screen and (prefers-reduced-motion: no-preference) {
+    .parvus__slider--animate:not(.parvus__slider--is-dragging) {
+      transition: transform var(--parvus-transition-duration) var(--parvus-transition-timing-function);
+    }
+  }
+  .parvus__slider--is-draggable {
+    cursor: grab;
+  }
+  .parvus__slider--is-dragging {
+    cursor: grabbing;
+  }
+  .parvus__slide {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    transition: var(--parvus-transition-duration);
+  }
+
+  .parvus__slide .parvus__caption, .parvus__counter {
+    font-family: $font__thin;
+    text-align: center;
+    line-height: 1.5em;
+  }
+
+  .parvus__counter {
+    font-size: 0.8em;
+  }
+
+  .parvus__slide > div:first-child {
+    background: transparent;
+    position: absolute;
+    top: 0.75em;
+    padding-bottom: 0.5em;
+    padding-top: 0.5em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    width: max-content;
+    border-radius: 1.5%;
+    max-width: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 1.125em;
+    max-height: calc(100vh - 4.25em);
+    transition: var(--parvus-transition-duration);
+
+    @media screen and (min-width: 1100px) {
+      height: calc(100vh - 4.25em);
+    }
+  }
+
+  .parvus__slide div, .parvus__slide .parvus__content {
+    width: 100%;
+    height: min-content;
+    flex-grow: 1;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  .parvus__content img {
+    border-radius: 3px;
+    //box-shadow: 0px -1px 30px 0px rgba(0, 0, 0, 0.75);
+    //-webkit-box-shadow: 0px -1px 30px 0px rgba(0, 0, 0, 0.75);
+    //-moz-box-shadow: 0px -1px 30px 0px rgba(0, 0, 0, 0.75);
+  }
+
+  @media screen and (prefers-reduced-motion: no-preference) {
+    .parvus__slide {
+      transition: visibility var(--parvus-transition-duration) var(--parvus-transition-timing-function);
+    }
+  }
+  .parvus__slide:not(.parvus__slide--is-active) {
+    visibility: hidden;
+  }
+  .parvus__slide .parvus__caption {
+    color: var(--palette-white);
+    margin-top: 2em;
+    will-change: transform, opacity;
+    line-height: 1.25em;
+    font-size: 0.9em;
+    max-height: 4em;
+    overflow-y: auto;
+    width: 100%;
+    margin: 0 auto;
+    flex-grow: 1;
+    flex-shrink: 0;
+    box-sizing: border-box;
+    max-width: 50ch;
+    padding: 0 2em;
+    padding-bottom: 0.25em;
+    transition: var(--parvus-transition-duration);
+    p {
+      margin: 0;
+    }
+  }
+
+
+.parvus__caption p br + br {
+	display: none;
+}
+  @media screen and (prefers-reduced-motion: no-preference) {
+    .parvus__slide .parvus__caption {
+      transition: transform var(--parvus-transition-duration) var(--parvus-transition-timing-function), opacity var(--parvus-transition-duration) var(--parvus-transition-timing-function);
+    }
+  }
+
+  .parvus__slide img {
+    //display: block;
+    height: 100% !important;
+    margin-left: auto;
+    margin-right: auto;
+    transform-origin: left top;
+    object-fit: contain;
+    width: 100% !important;
+    transition: var(--parvus-transition-duration);
+  }
+  .parvus__loader {
+    display: inline-block;
+    padding: 3em;
+    background: transparent;
+    box-sizing: border-box !important;
+    overflow: visible !important;
+    height: 10em !important;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 10em !important;
+    max-width: 10em;
+    max-height: 10em;
+    z-index: 9999;
+  }
+  .parvus__loader::before {
+    animation: spin 1s infinite;
+    border-radius: 100%;
+    border: 0.25rem solid var(--parvus-loader-background-color);
+    border-top-color: var(--parvus-loader-color);
+    bottom: 0;
+    content: "";
+    left: 8%;
+    position: absolute;
+    top: 8%;
+    z-index: 9999;
+    width: 84%;
+    height: 84%;
+  }
+  .parvus__toolbar {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    width: 85%;
+    bottom: 0.75em;
+    height: 2em;
+    transition: var(--parvus-transition-duration);
+  }
+
+  .parvus__toolbar > div {
+    display: flex;
+    gap: 1.5em;
+    align-items: center;
+  }
+  
+  .parvus__btn {
+    appearance: none;
+    background-image: none;
+    cursor: pointer;
+    display: flex !important;
+    font: inherit;
+    padding: 0.3125rem !important;
+    position: relative;
+    touch-action: manipulation;
+    will-change: transform, opacity;
+    z-index: 7;
+    width: 1.85em;
+    color: var(--palette-white);
+    border: 1.5px solid #fff;
+    background: transparent;
+    border-radius: 50%;
+  }
+
+  .parvus__btn--previous, .parvus__btn--next {
+    
+    border-radius: 50%;
+
+    &:hover, &:focus {
+     
+    }
+  }
+
+  .parvus__btn--next {
+  
+    &:hover, &:focus {
+    }
+
+  }
+
+
+  @media screen and (prefers-reduced-motion: no-preference) {
+    .parvus__btn {
+      transition: transform var(--parvus-transition-duration) var(--parvus-transition-timing-function), opacity var(--parvus-transition-duration) var(--parvus-transition-timing-function);
+    }
+  }
+
+  .parvus__btn svg {
+    fill: none;
+    pointer-events: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1;
+    stroke: currentColor;
+    width: 1.75em;
+    height: auto;
+  }
+
+  .parvus__btn:not(:hover, :focus) svg polyline {
+      stroke: currentColor;
+  }
+
+  .parvus__btn[disabled] {
+    opacity: 0.5;
+  }
+  .parvus__counter {
+    position: relative;
+    z-index: 7;
+    color: var(--palette-white);
+  }
+  @media screen and (prefers-reduced-motion: no-preference) {
+    .parvus__counter {
+      transition: transform var(--parvus-transition-duration) var(--parvus-transition-timing-function), opacity var(--parvus-transition-duration) var(--parvus-transition-timing-function);
+    }
+  }
+  .parvus__counter[aria-hidden=true] {
+    display: none;
+  }
+  @media screen and (prefers-reduced-motion: no-preference) {
+    .parvus--is-opening .parvus__counter, .parvus--is-opening .parvus__btn--close, .parvus--is-opening .parvus__btn--previous, .parvus--is-opening .parvus__btn--next, .parvus--is-opening .parvus__caption, .parvus--is-closing .parvus__counter, .parvus--is-closing .parvus__btn--close, .parvus--is-closing .parvus__btn--previous, .parvus--is-closing .parvus__btn--next, .parvus--is-closing .parvus__caption {
+      opacity: 0;
+    }
+    .parvus--is-vertical-closing .parvus__counter, .parvus--is-vertical-closing .parvus__btn--close {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    .parvus--is-vertical-closing .parvus__btn--previous {
+      transform: translate(-100%, -50%);
+      opacity: 0;
+    }
+    .parvus--is-vertical-closing .parvus__btn--next {
+      transform: translate(100%, -50%);
+      opacity: 0;
+    }
+    .parvus--is-vertical-closing .parvus__caption {
+      transform: translateY(100%);
+      opacity: 0;
+    }
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @media screen and (min-width: 992px) {
+    .parvus__toolbar {
+        width: 25%;
+    }
+  }

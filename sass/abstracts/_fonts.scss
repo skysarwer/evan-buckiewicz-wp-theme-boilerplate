@@ -1,0 +1,40 @@
+// Use the fonts path variable in the @font-face declarations
+@font-face {
+    font-family: 'playfair-display';
+    src: url(#{$fonts-path} + 'playfairdisplay-semibold-webfont.woff2') format('woff2'), 
+         url(#{$fonts-path} + 'playfairdisplay-semibold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'latoregular';
+    src: url(#{$fonts-path} + 'lato-regular-webfont.woff2') format('woff2'),
+         url(#{$fonts-path} + 'lato-regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'latolight';
+    src: url(#{$fonts-path} + 'lato-light-webfont.woff2') format('woff2'),
+         url(#{$fonts-path} + 'lato-light-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'latoheavy';
+    src: url(#{$fonts-path} + 'lato-heavy-webfont.woff2') format('woff2'),
+         url(#{$fonts-path} + 'lato-heavy-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'latosemibold';
+    src: url(#{$fonts-path} + 'lato-semibold-webfont.woff2') format('woff2'),
+         url(#{$fonts-path} + 'lato-semibold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}

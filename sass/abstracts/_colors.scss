@@ -1,0 +1,143 @@
+:root {
+    // Palette
+    --palette-light-gray: #ededed;
+    --palette-medium-gray: #c4c6c7;
+    --palette-white: #f5f5f5;
+    --palette-black: #140F09;
+    --palette-saturated-orange: #f28a2e;
+    --palette-extra-dark-blue: #1B3455;
+    --palette-dark-blue: #1c437a;
+    --palette-light-blue: #e9f3fc;
+    --palette-medium-blue: #6787B2;
+    --palette-light-yellow: #fcf2e5;
+    --palette-extra-light-yellow: #fff8ee;
+    --palette-dark-brown: #4d2918;
+    --palette-light-pink: #fce5fb;
+    --palette-dark-pink: #7a1c72;
+    --palette-dark-red: #d91a61;
+    --palette-light-red: #fef2f1;
+    --palette-dark-green: #176a4b;
+    --palette-light-green: #eef5dc;
+
+    // Global styles
+    --sbtl-bg: var(--palette-white);
+    --sbtl-focus-indicator: var(--palette-dark-blue);
+    --sbtl-highlight-bg: var(--palette-medium-blue);
+    --sbtl-highlight-text: var(--palette-black);
+    --sbtl-marker-color: var(--palette-saturated-orange);
+    --sbtl-form-ui: var(--palette-dark-blue);
+    --sbtl-form-checked-hover: var(--palette-black);
+    --sbtl-border-accent: var(--palette-medium-gray);
+    --sbtl-border-accent-active: var(--palette-medium-gray);
+    --sbtl-scrollbar-thumb: var(--palette-medium-blue);
+    --sbtl-scrollbar-thumb-hover: var(--palette-dark-blue);
+
+    --sbtl-box-shadow-light: 3px 3px 4px var(--palette-medium-gray);
+
+    // Element styles - buttons
+    --sbtl-btn-bg: var(--palette-marble);
+    --sbtl-btn-bg-hover: var(--palette-dark-marble);
+    --sbtl-btn-border: 2px solid var(--palette-dark-blue);
+    --sbtl-btn-text: var(--palette-black);
+    --sbtl-btn-text-hover: var(--palette-dark-blue);
+    --sbtl-btn-shadow: none;
+    --sbtl-btn-shadow-hover: none;
+
+    --sbtl-btn-outline-bg: transparent;
+    --sbtl-btn-outline-text: var(--palette-dark-blue);
+    --sbtl-btn-outline-border: 2px solid var(--palette-dark-blue);
+    --sbtl-btn-outline-shadow: none;
+    --sbtl-btn-outline-hover-bg: var(--palette-dark-blue);
+    --sbtl-btn-outline-hover-text: var(--palette-white);
+    --sbtl-btn-border-radius: 50px;
+
+    // Element styles - text
+    --sbtl-text-title: var(--palette-black);
+    --sbtl-text-heading: var(--palette-black);
+    --sbtl-text-subheading: var(--palette-black);
+
+    --sbtl-text-link: var(--palette-medium-blue);
+    --sbtl-text-link-hover: var(--palette-extra-dark-blue);
+    --sbtl-text-heading: var(--palette-black);
+    --sbtl-text-body: var(--palette-black);
+
+    --sbtl-input-text: var(--palette-black);
+    --sbtl-input-text-hover: var(--palette-black);
+    --sbtl-input-text-focus: var(--palette-dark-blue);
+    --sbtl-input-bg: var(--sbtl-bg);
+    --sbtl-input-bg-hover: var(--palette-light-blue);
+    --sbtl-input-bg-focus: var(--sbtl-bg);
+    --sbtl-input-border: 2px solid var(--palette-dark-blue);
+    --sbtl-input-border-focus: none;
+    --sbtl-input-border-radius: 50px;
+    --sbtl-input-height: 3.25em;
+    --sbtl-input-error: var(--palette-dark-red);
+    --sbtl-input-error-bg: var(--palette-light-red);
+    --sbtl-input-success: var(--palette-dark-green);
+    --sbtl-input-success-bg: var(--palette-light-green);
+
+    --sbtl-btn-shadow-accent: #A69E7D;
+    --sbtl-submenu-bg: var(--palette-light-yellow);
+}
+
+$color__background-body: var(--sbtl-bg);
+$color__background-screen: var(--palette-light-brown);
+$color__background-hr: var(--palette-green);
+
+//delete later
+$color__background-pre: var(--sbtl-bg);
+
+$color__accent: var(--palette-saturated-orange);
+$color__accent-light: var(--light-pink);
+$color__accent-dark: var(--palette-saturated-orange);
+
+$color__ui: var(--palette-dark-blue );
+
+$color__text-main: var(--sbtl-text-body);
+$color__text-screen: var(--sbtl-text-body);
+$color__text-light: var(--sbtl-text-body);
+$color__text-input: var(--sbtl-text-body);
+$color__link: var(--sbtl-text-link);
+$color__link-visited: var(--sbtl-text-link);
+$color__link-hover: var(--sbtl-text-link-hover);
+
+$color__checkbox-check: var(--palette-white);
+
+$sidemenu__item-link-bg: var(--sbtl-bg);
+$sidemenu__item-link-text: var(--sbtl-text-body);
+$sidemenu__item-link-bg-hover: #f7fbff;
+$sidemenu__item-link-text-hover: var(--palette-dark-blue);
+$sidemenu__item-link-text-active: var(--sbtl-text-body);
+$sidemenu__item-link-bg-active: var(--palette-light-blue);
+$sidemenu__item-children-bg: var(--palette-light-gray);
+$sidemenu__header-link-text-hover: var(--palette-dark-blue);
+
+$author_box-bg: var(--palette-extra-light-yellow);
+
+$header_bg: var(--palette-white);
+$header_nav-text: var(--sbtl-text-body);
+$header_nav-text-hover: var(--palette-dark-pink);
+$header_nav-submenu-bg: var(--palette-light-yellow);
+$header_nav-submenu-text: var(--sbtl-text-body);
+$header_nav-submenu-text-hover: $header_nav-text-hover;
+$header_nav-submenu-text-active: $header_nav-text-hover;
+
+$header_mobile-menu-bg: var(--palette-light-yellow);
+$header_mobile-menu-text: var(--sbtl-text-body);
+$header_mobile-menu-text-hover: $header_nav-text-hover;
+
+$card__bg: var(--palette-light-yellow);
+$card__bg-hover: var(--palette-light-yellow);
+$card__shadow: none;
+$card__shadow-hover: none;
+
+$card__meta-text: var(--sbtl-text-body);
+$card__meta-border: 1px solid var(--palette-light-green);
+$card__meta-text-hover: var(--sbtl-text-link-hover);
+$card__meta-border-hover: 1px dashed var(--sbtl-text-link-hover);
+$card__meta-icon-clr: var(--sbtl-text-link);
+
+$tag__bg: var(--palette-light-yellow);
+$tag__bg-hover: var(--palette-light-yellow);
+
+$menu_item_highlight: var(--palette-light-yellow);

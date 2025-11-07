@@ -1,0 +1,77 @@
+.sbtl-loading-iframe-wrapper {
+    position: relative;
+    max-width: unset !important;
+
+    .sbtl-loading-container {
+        z-index: 99;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        padding-top: 3em;
+        padding-left: 2em;
+        padding-right: 2em;
+        text-align: center;
+        background: var(--sbtl-bg);
+
+        .sbtl-loading-animation {
+            display:block;
+            transform: scale(1.25);
+            position:relative;
+            width:64px;
+            height:64px;
+            margin: 0 auto;
+           }
+           .sbtl-loading-animation div {
+            position:absolute;
+            top:27px;
+            width:8px;
+            height:8px;
+            border-radius:50%;
+            background: $color__accent;
+            animation-timing-function:cubic-bezier(0,1,1,0)
+           }
+           .sbtl-loading-animation div:first-child {
+            left:6px;
+            animation:srp-loading-ellipsis1 .6s infinite
+           }
+           .sbtl-loading-animation div:nth-child(2) {
+            left:6px;
+            animation:srp-loading-ellipsis2 1s infinite
+           }
+           .sbtl-loading-animation div:nth-child(3) {
+            left:26px;
+            animation:srp-loading-ellipsis2 1s infinite
+           }
+           .sbtl-loading-animation div:nth-child(4) {
+            left:45px;
+            animation:srp-loading-ellipsis3 1s infinite
+           }
+                @keyframes srp-loading-ellipsis1 {
+                   0% {
+                       transform:scale(0)
+                   }
+                   to {
+                       transform:scale(1)
+                   }
+                   }
+                   @keyframes srp-loading-ellipsis3 {
+                   0% {
+                       transform:scale(1)
+                   }
+                   to {
+                       transform:scale(0)
+                   }
+                   }
+                   @keyframes srp-loading-ellipsis2 {
+                   0% {
+                       transform:translate(0)
+                   }
+                   to {
+                       transform:translate(19px)
+                   }
+               }
+    }
+}
+

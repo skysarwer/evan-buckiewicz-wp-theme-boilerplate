@@ -1,0 +1,134 @@
+.site-footer {
+    position: relative;
+    z-index: 9;
+    padding-bottom: 1em;
+    padding-top: 1em;
+    p {
+        //text-align: center;
+        margin-bottom: 0;
+    }
+
+    ul {
+        margin-left: 0;
+    }
+
+    .address p {
+        position: relative;
+        padding-left: 3em;
+        
+        svg {
+            position: absolute;
+            left: 0;
+            width: 2.5em;
+
+            path {
+                fill: $color__accent;
+            }
+        }
+    }
+    
+    .contact p {
+        text-align: center;
+    }
+
+    .footer-top {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .footer-bottom {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2em;
+        margin-top: 2em;
+
+        @media screen and (min-width: 600px) {
+            flex-direction: row;
+            margin-top: 0;
+        }
+
+        .icons {
+            display: flex;
+            gap: 1em;
+            
+            a {
+                width: 1.5em;
+                height: 1.5em;
+                transition: 0.2s;
+
+                svg {
+                    width: 100%;
+                    height: 100%;
+                }
+
+                &:hover, &:focus {
+
+                    svg {
+
+                        transform: rotate(7deg);
+
+                        .strw-fs {
+                            stroke-width: 795;
+                        }
+
+                        .fil0-fs, .fil0-fsm {
+                            fill: #ffd4d7;
+                        }
+
+                        .fil1-fstt {
+                            fill: #000;
+                        }
+                        
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+/*@keyframes arrow-path {
+    0% {
+        transform: rotate(22.4deg);
+    }
+
+    18% {
+        transform: rotate(343.9deg);
+    }
+
+    47% {
+        transform: rotate(2.9deg);
+    }
+
+    68% {
+        transform: rotate(353.93deg);
+    }
+
+    100% {
+        transform: rotate(353.93deg);
+    }
+}
+
+@keyframes arrow-path-mirror {
+    0% {
+        transform: rotate(-22.4deg);
+    }
+
+    18% {
+        transform: rotate(-343.9deg);
+    }
+
+    47% {
+        transform: rotate(-2.9deg);
+    }
+
+    68% {
+        transform: rotate(-353.93deg);
+    }
+
+    100% {
+        transform: rotate(-353.93deg);
+    }
+}*/

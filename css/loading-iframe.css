@@ -1,0 +1,18 @@
+/* Error: Undefined variable.
+ *    ,
+ * 32 |             background: $color__accent;
+ *    |                         ^^^^^^^^^^^^^^
+ *    '
+ *   sass\patterns\_loading-iframe.scss 32:25  @import
+ *   sass\css\loading-iframe.scss 1:9          root stylesheet */
+
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Undefined variable.\a    \2577 \a 32 \2502              background: $color__accent;\d\a    \2502                          ^^^^^^^^^^^^^^\a    \2575 \a   sass\\patterns\\_loading-iframe.scss 32:25  @import\a   sass\\css\\loading-iframe.scss 1:9          root stylesheet";
+}
