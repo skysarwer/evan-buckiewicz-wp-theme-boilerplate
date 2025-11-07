@@ -1,4 +1,4 @@
-# Subtle Theme Demo - WordPress starter theme by Evan Buckiewicz
+# WordPress starter theme by Evan Buckiewicz
 
 ## Overview
 This repository contains my personal starter theme for building modern, performant, and accessible block-based WordPress websites.  It is designed to be a flexible "mycelium" from which custom, high-quality themes can grow. Built on the minimal Underscores base, with a focus on enqueuing only what is necessary.
