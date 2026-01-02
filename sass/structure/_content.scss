@@ -342,18 +342,17 @@
 				}
 
 				.entry-content{
+					--sbtl-spacing-content: 0px;
 					padding-left: 0 !important;
 					padding-right: 2.5rem !important;
-					.alignwide {
-						width: 100% !important;
-						margin-left: 0 !important;
-					}
+					
+					// .alignwide is handled automatically by --sbtl-spacing-content: 0
 
 					.alignfull { 
-						width: calc(100% + #{$spacing__default-lg}) !important;
-						margin-left: calc(#{$spacing__default-lg} * -1) !important;
-						padding-left: $spacing__default-lg !important;
-						padding-right: $spacing__default-lg !important;
+						width: calc(100% + var(--sbtl-spacing-default)) !important;
+						margin-left: calc(var(--sbtl-spacing-default) * -1) !important;
+						padding-left: var(--sbtl-spacing-default) !important;
+						padding-right: var(--sbtl-spacing-default) !important;
 
 						&.has-light-brown-background-color {
 							padding-right: 0 !important;

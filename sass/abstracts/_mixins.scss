@@ -12,49 +12,33 @@
 
 // Content wrap
 @mixin content-wrap {
-	padding-left: $spacing__default-sm;
-	padding-right: $spacing__default-sm;
-
-	@media screen and (min-width: 600px) { 
-		padding-left: $spacing__default-md;
-		padding-right: $spacing__default-md;
-	}
+	padding-left: var(--sbtl-spacing-default);
+	padding-right: var(--sbtl-spacing-default);
 
 	@media screen and (min-width: 1100px) { 
-		padding-left: $spacing__default-lg;
-		padding-right: $spacing__default-lg;
 		margin: 0 auto;
+		max-width: var(--sbtl-max-width);
 	}
 }
 
 @mixin entry-content {
-	padding-left: $spacing__content-sm;
-	padding-right: $spacing__content-sm;
-
-	@media screen and (min-width: 600px) { 
-		padding-left: $spacing__content-md;
-		padding-right: $spacing__content-md;
-	}
+	padding-left: var(--sbtl-spacing-content);
+	padding-right: var(--sbtl-spacing-content);
 
 	@media screen and (min-width: 1100px) { 
-		padding-left: $spacing__content-lg;
-		padding-right: $spacing__content-lg;
 		margin: 0 auto;
 	}
 }
 
 @mixin total-wrap {
-	padding-left: $spacing__total-sm;
-	padding-right: $spacing__total-sm;
-
-	@media screen and (min-width: 600px) { 
-		padding-left: $spacing__total-md;
-		padding-right: $spacing__total-md;
-	}
+	padding-left: var(--sbtl-spacing-total);
+	padding-right: var(--sbtl-spacing-total);
 
 	@media screen and (min-width: 1100px) { 
-		padding-left: $spacing__total-lg;
-		padding-right: $spacing__total-lg;
+		// Calculate padding to center content within max-width
+		// Formula: Base Padding + Half of the empty space outside max-width
+		padding-left: calc(var(--sbtl-spacing-total) + max(0px, (100vw - var(--sbtl-max-width)) / 2));
+		padding-right: calc(var(--sbtl-spacing-total) + max(0px, (100vw - var(--sbtl-max-width)) / 2));
 		margin: 0 auto;
 	}
 }

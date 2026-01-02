@@ -49,7 +49,7 @@ $fonts-path: '../../fonts/';
 			padding-left: $spacing__total-lg;
 			padding-right: $spacing__total-lg;
 			margin: 0 auto;
-			max-width: 150ch;
+			max-width: var(--sbtl-max-width);
 		}
 	}
 
@@ -147,39 +147,32 @@ $fonts-path: '../../fonts/';
 			border-bottom: 2px solid !important;
 		}
 	}
-	.block-editor-block-list__layout.is-root-container > .alignwide {
-		max-width: unset;
-		@media screen and (min-width: 600px) { 
-			width: calc(100% + ((#{$spacing__content-md} + #{$spacing__content-md})));
-			margin-left: calc(-1 * (#{$spacing__content-md})) !important;
-		} 
-	
-		@media screen and (min-width: 1100px) { 
-			width: calc(100% + ((#{$spacing__content-lg} + #{$spacing__content-lg})));
-			margin-left: calc(-1 * (#{$spacing__content-lg})) !important;
-		}
-	
-		box-sizing: border-box;
-	}
-
-	.block-editor-block-list__block.alignfull {
-		box-sizing: border-box;
-		width: calc(100% + #{$spacing__total-sm} + #{$spacing__total-sm}) !important;
-		margin-left: calc(-1 * #{$spacing__total-sm}) !important;
-
-		@media screen and (min-width: 600px) { 
-			width: calc(100% + #{$spacing__total-md} + #{$spacing__total-md}) !important;
-			margin-left: calc(-1 * #{$spacing__total-md}) !important;
-		}
-
-		@media screen and (min-width: 1100px) { 
-			width: calc(100% + #{$spacing__total-lg} + #{$spacing__total-lg}) !important;
-			margin-left: calc(-1 * #{$spacing__total-lg}) !important;
-		}	
-	}
 
 	.wp-block.aligncenter {
 		width: min-content;
+	}
+
+	// Editor-specific alignment overrides to fix "funky" behavior
+	// The editor container is already capped at max-width, so we don't need viewport logic here.
+	
+	// Fix Align Wide: Ensure it breaks out of the content column correctly
+	.wp-block[data-align="wide"] {
+		max-width: unset;
+		width: calc(100% + (var(--sbtl-spacing-content) * 2));
+		margin-left: calc(var(--sbtl-spacing-content) * -1) !important;
+		margin-right: calc(var(--sbtl-spacing-content) * -1) !important;
+	}
+
+	// Fix Align Full: Just fill the container (break out of total padding)
+	.wp-block[data-align="full"] {
+		max-width: unset;
+		width: calc(100% + (var(--sbtl-spacing-total) * 2));
+		margin-left: calc(var(--sbtl-spacing-total) * -1) !important;
+		margin-right: calc(var(--sbtl-spacing-total) * -1) !important;
+
+		// Reset inner padding to simple values (no viewport math needed in editor)
+		padding-left: var(--sbtl-spacing-total);
+		padding-right: var(--sbtl-spacing-total);
 	}
 
 }

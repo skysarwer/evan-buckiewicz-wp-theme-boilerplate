@@ -268,7 +268,7 @@
 	visibility: visible;
 }
 
-@media screen and (max-width: (37.49em)) {
+@media screen and (max-width: 37.49em) {
 
 	.main-navigation #primary-menu.nav-menu .sub-menu {
 		font-size: 0.9em;
@@ -383,7 +383,8 @@
 		right: 2em;
 	}
 
-	.menu-toggle {
+	.menu-toggle,
+	.main-navigation .menu-toggle {
 		display: none;
 	}
 

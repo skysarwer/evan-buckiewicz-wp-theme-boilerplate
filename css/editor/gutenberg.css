@@ -93,6 +93,22 @@
   --sbtl-spacing-content-lg: 13.8rem;
   --sbtl-spacing-content-md: 1rem;
   --sbtl-spacing-content-sm: 0rem;
+  --sbtl-spacing-default: var(--sbtl-spacing-default-sm);
+  --sbtl-spacing-content: var(--sbtl-spacing-content-sm);
+  --sbtl-spacing-total: calc(var(--sbtl-spacing-content) + var(--sbtl-spacing-default));
+  --sbtl-max-width: 1500px;
+}
+@media screen and (min-width: 600px) {
+  :root {
+    --sbtl-spacing-default: var(--sbtl-spacing-default-md);
+    --sbtl-spacing-content: var(--sbtl-spacing-content-md);
+  }
+}
+@media screen and (min-width: 1100px) {
+  :root {
+    --sbtl-spacing-default: var(--sbtl-spacing-default-lg);
+    --sbtl-spacing-content: var(--sbtl-spacing-content-lg);
+  }
 }
 
 .editor-styles-wrapper {
@@ -323,7 +339,7 @@
     padding-left: calc(var(--sbtl-spacing-content-lg) + var(--sbtl-spacing-default-lg));
     padding-right: calc(var(--sbtl-spacing-content-lg) + var(--sbtl-spacing-default-lg));
     margin: 0 auto;
-    max-width: 150ch;
+    max-width: var(--sbtl-max-width);
   }
 }
 .editor-styles-wrapper .wp-block-quote {
@@ -333,7 +349,7 @@
 .editor-styles-wrapper blockquote, .editor-styles-wrapper q {
   quotes: unset;
 }
-.editor-styles-wrapper button,
+.editor-styles-wrapper button:where(:not(.components-button, .submenu-toggle, .menu-toggle)),
 .editor-styles-wrapper a.button,
 .editor-styles-wrapper input[type=button],
 .editor-styles-wrapper input[type=reset],
@@ -355,7 +371,7 @@
   margin-right: 0.5em;
   transition: 0.15s ease-out;
 }
-.editor-styles-wrapper button:visited,
+.editor-styles-wrapper button:where(:not(.components-button, .submenu-toggle, .menu-toggle)):visited,
 .editor-styles-wrapper a.button:visited,
 .editor-styles-wrapper input[type=button]:visited,
 .editor-styles-wrapper input[type=reset]:visited,
@@ -365,7 +381,7 @@
 .editor-styles-wrapper .wp-block-button__link:visited {
   color: var(--sbtl-text-body);
 }
-.editor-styles-wrapper button:hover, .editor-styles-wrapper button:active, .editor-styles-wrapper button:focus-visible, .editor-styles-wrapper button[aria-selected=true],
+.editor-styles-wrapper button:where(:not(.components-button, .submenu-toggle, .menu-toggle)):hover, .editor-styles-wrapper button:where(:not(.components-button, .submenu-toggle, .menu-toggle)):active, .editor-styles-wrapper button:where(:not(.components-button, .submenu-toggle, .menu-toggle)):focus-visible, .editor-styles-wrapper button:where(:not(.components-button, .submenu-toggle, .menu-toggle))[aria-selected=true],
 .editor-styles-wrapper a.button:hover,
 .editor-styles-wrapper a.button:active,
 .editor-styles-wrapper a.button:focus-visible,
@@ -397,7 +413,7 @@
   color: var(--sbtl-text-body);
   text-decoration: none;
 }
-.editor-styles-wrapper button svg,
+.editor-styles-wrapper button:where(:not(.components-button, .submenu-toggle, .menu-toggle)) svg,
 .editor-styles-wrapper a.button svg,
 .editor-styles-wrapper input[type=button] svg,
 .editor-styles-wrapper input[type=reset] svg,
@@ -429,7 +445,7 @@
   box-shadow: var(--sbtl-btn-shadow-hover);
   color: var(--sbtl-btn-text-hover);
 }
-.editor-styles-wrapper button,
+.editor-styles-wrapper button:where(:not(.components-button, .submenu-toggle, .menu-toggle)),
 .editor-styles-wrapper a.button,
 .editor-styles-wrapper input[type=button],
 .editor-styles-wrapper input[type=submit],
@@ -444,7 +460,7 @@
   box-shadow: var(--sbtl-btn-outline-shadow);
   padding: 12px 18px;
 }
-.editor-styles-wrapper button:hover, .editor-styles-wrapper button:active, .editor-styles-wrapper button:focus-visible, .editor-styles-wrapper button[aria-selected=true],
+.editor-styles-wrapper button:where(:not(.components-button, .submenu-toggle, .menu-toggle)):hover, .editor-styles-wrapper button:where(:not(.components-button, .submenu-toggle, .menu-toggle)):active, .editor-styles-wrapper button:where(:not(.components-button, .submenu-toggle, .menu-toggle)):focus-visible, .editor-styles-wrapper button:where(:not(.components-button, .submenu-toggle, .menu-toggle))[aria-selected=true],
 .editor-styles-wrapper a.button:hover,
 .editor-styles-wrapper a.button:active,
 .editor-styles-wrapper a.button:focus-visible,
@@ -1481,18 +1497,15 @@
     width: calc(80% - 4.875rem);
   }
   .editor-styles-wrapper #primary.has-sidemenu > .content-wrap article.page .entry-content, .editor-styles-wrapper #primary.has-sidemenu > .content-wrap .content-wrap-inner .entry-content {
+    --sbtl-spacing-content: 0px;
     padding-left: 0 !important;
     padding-right: 2.5rem !important;
   }
-  .editor-styles-wrapper #primary.has-sidemenu > .content-wrap article.page .entry-content .alignwide, .editor-styles-wrapper #primary.has-sidemenu > .content-wrap .content-wrap-inner .entry-content .alignwide {
-    width: 100% !important;
-    margin-left: 0 !important;
-  }
   .editor-styles-wrapper #primary.has-sidemenu > .content-wrap article.page .entry-content .alignfull, .editor-styles-wrapper #primary.has-sidemenu > .content-wrap .content-wrap-inner .entry-content .alignfull {
-    width: calc(100% + var(--sbtl-spacing-default-lg)) !important;
-    margin-left: calc(var(--sbtl-spacing-default-lg) * -1) !important;
-    padding-left: var(--sbtl-spacing-default-lg) !important;
-    padding-right: var(--sbtl-spacing-default-lg) !important;
+    width: calc(100% + var(--sbtl-spacing-default)) !important;
+    margin-left: calc(var(--sbtl-spacing-default) * -1) !important;
+    padding-left: var(--sbtl-spacing-default) !important;
+    padding-right: var(--sbtl-spacing-default) !important;
   }
   .editor-styles-wrapper #primary.has-sidemenu > .content-wrap article.page .entry-content .alignfull.has-light-brown-background-color, .editor-styles-wrapper #primary.has-sidemenu > .content-wrap .content-wrap-inner .entry-content .alignfull.has-light-brown-background-color {
     padding-right: 0 !important;
@@ -1594,23 +1607,13 @@
 .editor-styles-wrapper .page-content,
 .editor-styles-wrapper .entry-content,
 .editor-styles-wrapper .entry-summary {
-  padding-left: var(--sbtl-spacing-content-sm);
-  padding-right: var(--sbtl-spacing-content-sm);
-}
-@media screen and (min-width: 600px) {
-  .editor-styles-wrapper .page-content,
-  .editor-styles-wrapper .entry-content,
-  .editor-styles-wrapper .entry-summary {
-    padding-left: var(--sbtl-spacing-content-md);
-    padding-right: var(--sbtl-spacing-content-md);
-  }
+  padding-left: var(--sbtl-spacing-content);
+  padding-right: var(--sbtl-spacing-content);
 }
 @media screen and (min-width: 1100px) {
   .editor-styles-wrapper .page-content,
   .editor-styles-wrapper .entry-content,
   .editor-styles-wrapper .entry-summary {
-    padding-left: var(--sbtl-spacing-content-lg);
-    padding-right: var(--sbtl-spacing-content-lg);
     margin: 0 auto;
   }
 }
@@ -1949,19 +1952,13 @@
   transition: 0.5s ease-out;
 }
 .editor-styles-wrapper .wp-block-cover.alignfull {
-  padding-left: calc(var(--sbtl-spacing-content-sm) + var(--sbtl-spacing-default-sm));
-  padding-right: calc(var(--sbtl-spacing-content-sm) + var(--sbtl-spacing-default-sm));
-}
-@media screen and (min-width: 600px) {
-  .editor-styles-wrapper .wp-block-cover.alignfull {
-    padding-left: calc(var(--sbtl-spacing-content-md) + var(--sbtl-spacing-default-md));
-    padding-right: calc(var(--sbtl-spacing-content-md) + var(--sbtl-spacing-default-md));
-  }
+  padding-left: var(--sbtl-spacing-total);
+  padding-right: var(--sbtl-spacing-total);
 }
 @media screen and (min-width: 1100px) {
   .editor-styles-wrapper .wp-block-cover.alignfull {
-    padding-left: calc(var(--sbtl-spacing-content-lg) + var(--sbtl-spacing-default-lg));
-    padding-right: calc(var(--sbtl-spacing-content-lg) + var(--sbtl-spacing-default-lg));
+    padding-left: calc(var(--sbtl-spacing-total) + max(0px, (100vw - var(--sbtl-max-width)) / 2));
+    padding-right: calc(var(--sbtl-spacing-total) + max(0px, (100vw - var(--sbtl-max-width)) / 2));
     margin: 0 auto;
   }
 }
@@ -2025,19 +2022,13 @@
   margin-right: 1.5em;
 }
 .editor-styles-wrapper .wp-block-group.alignfull {
-  padding-left: calc(var(--sbtl-spacing-content-sm) + var(--sbtl-spacing-default-sm));
-  padding-right: calc(var(--sbtl-spacing-content-sm) + var(--sbtl-spacing-default-sm));
-}
-@media screen and (min-width: 600px) {
-  .editor-styles-wrapper .wp-block-group.alignfull {
-    padding-left: calc(var(--sbtl-spacing-content-md) + var(--sbtl-spacing-default-md));
-    padding-right: calc(var(--sbtl-spacing-content-md) + var(--sbtl-spacing-default-md));
-  }
+  padding-left: var(--sbtl-spacing-total);
+  padding-right: var(--sbtl-spacing-total);
 }
 @media screen and (min-width: 1100px) {
   .editor-styles-wrapper .wp-block-group.alignfull {
-    padding-left: calc(var(--sbtl-spacing-content-lg) + var(--sbtl-spacing-default-lg));
-    padding-right: calc(var(--sbtl-spacing-content-lg) + var(--sbtl-spacing-default-lg));
+    padding-left: calc(var(--sbtl-spacing-total) + max(0px, (100vw - var(--sbtl-max-width)) / 2));
+    padding-right: calc(var(--sbtl-spacing-total) + max(0px, (100vw - var(--sbtl-max-width)) / 2));
     margin: 0 auto;
   }
 }
@@ -2095,21 +2086,9 @@
 .editor-styles-wrapper body .is-layout-constrained > .alignwide,
 .editor-styles-wrapper .alignwide {
   max-width: unset;
+  width: calc(100% + var(--sbtl-spacing-content) * 2);
+  margin-left: calc(var(--sbtl-spacing-content) * -1) !important;
   box-sizing: border-box;
-}
-@media screen and (min-width: 600px) {
-  .editor-styles-wrapper body .is-layout-constrained > .alignwide,
-  .editor-styles-wrapper .alignwide {
-    width: calc(100% + var(--sbtl-spacing-content-md) + var(--sbtl-spacing-content-md));
-    margin-left: calc(-1 * (var(--sbtl-spacing-content-md))) !important;
-  }
-}
-@media screen and (min-width: 1100px) {
-  .editor-styles-wrapper body .is-layout-constrained > .alignwide,
-  .editor-styles-wrapper .alignwide {
-    width: calc(100% + var(--sbtl-spacing-content-lg) + var(--sbtl-spacing-content-lg));
-    margin-left: calc(-1 * (var(--sbtl-spacing-content-lg))) !important;
-  }
 }
 .editor-styles-wrapper .type-post .alignwide {
   width: 100%;
@@ -2118,39 +2097,25 @@
 .editor-styles-wrapper body .is-layout-constrained > .alignfull,
 .editor-styles-wrapper .alignfull {
   box-sizing: border-box;
-  width: calc(100% + calc(var(--sbtl-spacing-content-sm) + var(--sbtl-spacing-default-sm)) + calc(var(--sbtl-spacing-content-sm) + var(--sbtl-spacing-default-sm)));
-  margin-left: calc(-1 * calc(var(--sbtl-spacing-content-sm) + var(--sbtl-spacing-default-sm))) !important;
+  width: calc(100% + var(--sbtl-spacing-total) * 2);
+  margin-left: calc(var(--sbtl-spacing-total) * -1) !important;
   max-width: unset;
-}
-@media screen and (min-width: 600px) {
-  .editor-styles-wrapper body .is-layout-constrained > .alignfull,
-  .editor-styles-wrapper .alignfull {
-    width: calc(100% + calc(var(--sbtl-spacing-content-md) + var(--sbtl-spacing-default-md)) + calc(var(--sbtl-spacing-content-md) + var(--sbtl-spacing-default-md)));
-    margin-left: calc(-1 * calc(var(--sbtl-spacing-content-md) + var(--sbtl-spacing-default-md))) !important;
-  }
 }
 @media screen and (min-width: 1100px) {
   .editor-styles-wrapper body .is-layout-constrained > .alignfull,
   .editor-styles-wrapper .alignfull {
     width: 100vw;
-    margin-left: calc(-1 * (100vw - 100%) / 2) !important;
+    margin-left: calc(50% - 50vw) !important;
   }
 }
 .editor-styles-wrapper .content-wrap {
-  padding-left: var(--sbtl-spacing-default-sm);
-  padding-right: var(--sbtl-spacing-default-sm);
-}
-@media screen and (min-width: 600px) {
-  .editor-styles-wrapper .content-wrap {
-    padding-left: var(--sbtl-spacing-default-md);
-    padding-right: var(--sbtl-spacing-default-md);
-  }
+  padding-left: var(--sbtl-spacing-default);
+  padding-right: var(--sbtl-spacing-default);
 }
 @media screen and (min-width: 1100px) {
   .editor-styles-wrapper .content-wrap {
-    padding-left: var(--sbtl-spacing-default-lg);
-    padding-right: var(--sbtl-spacing-default-lg);
     margin: 0 auto;
+    max-width: var(--sbtl-max-width);
   }
 }
 .editor-styles-wrapper .block-editor-block-list__layout.is-root-container > * {
@@ -2170,41 +2135,22 @@
   color: var(--sbtl-text-link-hover) !important;
   border-bottom: 2px solid !important;
 }
-.editor-styles-wrapper .block-editor-block-list__layout.is-root-container > .alignwide {
-  max-width: unset;
-  box-sizing: border-box;
-}
-@media screen and (min-width: 600px) {
-  .editor-styles-wrapper .block-editor-block-list__layout.is-root-container > .alignwide {
-    width: calc(100% + var(--sbtl-spacing-content-md) + var(--sbtl-spacing-content-md));
-    margin-left: calc(-1 * (var(--sbtl-spacing-content-md))) !important;
-  }
-}
-@media screen and (min-width: 1100px) {
-  .editor-styles-wrapper .block-editor-block-list__layout.is-root-container > .alignwide {
-    width: calc(100% + var(--sbtl-spacing-content-lg) + var(--sbtl-spacing-content-lg));
-    margin-left: calc(-1 * (var(--sbtl-spacing-content-lg))) !important;
-  }
-}
-.editor-styles-wrapper .block-editor-block-list__block.alignfull {
-  box-sizing: border-box;
-  width: calc(100% + calc(var(--sbtl-spacing-content-sm) + var(--sbtl-spacing-default-sm)) + calc(var(--sbtl-spacing-content-sm) + var(--sbtl-spacing-default-sm))) !important;
-  margin-left: calc(-1 * calc(var(--sbtl-spacing-content-sm) + var(--sbtl-spacing-default-sm))) !important;
-}
-@media screen and (min-width: 600px) {
-  .editor-styles-wrapper .block-editor-block-list__block.alignfull {
-    width: calc(100% + calc(var(--sbtl-spacing-content-md) + var(--sbtl-spacing-default-md)) + calc(var(--sbtl-spacing-content-md) + var(--sbtl-spacing-default-md))) !important;
-    margin-left: calc(-1 * calc(var(--sbtl-spacing-content-md) + var(--sbtl-spacing-default-md))) !important;
-  }
-}
-@media screen and (min-width: 1100px) {
-  .editor-styles-wrapper .block-editor-block-list__block.alignfull {
-    width: calc(100% + calc(var(--sbtl-spacing-content-lg) + var(--sbtl-spacing-default-lg)) + calc(var(--sbtl-spacing-content-lg) + var(--sbtl-spacing-default-lg))) !important;
-    margin-left: calc(-1 * calc(var(--sbtl-spacing-content-lg) + var(--sbtl-spacing-default-lg))) !important;
-  }
-}
 .editor-styles-wrapper .wp-block.aligncenter {
   width: min-content;
+}
+.editor-styles-wrapper .wp-block[data-align=wide] {
+  max-width: unset;
+  width: calc(100% + var(--sbtl-spacing-content) * 2);
+  margin-left: calc(var(--sbtl-spacing-content) * -1) !important;
+  margin-right: calc(var(--sbtl-spacing-content) * -1) !important;
+}
+.editor-styles-wrapper .wp-block[data-align=full] {
+  max-width: unset;
+  width: calc(100% + var(--sbtl-spacing-total) * 2);
+  margin-left: calc(var(--sbtl-spacing-total) * -1) !important;
+  margin-right: calc(var(--sbtl-spacing-total) * -1) !important;
+  padding-left: var(--sbtl-spacing-total);
+  padding-right: var(--sbtl-spacing-total);
 }
 
 /*# sourceMappingURL=gutenberg.css.map */

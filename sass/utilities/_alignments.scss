@@ -29,16 +29,8 @@
 body .is-layout-constrained > .alignwide,
 .alignwide {
 	max-width: unset;
-	@media screen and (min-width: 600px) { 
-		width: calc(100% + ((#{$spacing__content-md} + #{$spacing__content-md})));
-		margin-left: calc(-1 * (#{$spacing__content-md})) !important;
-	} 
-
-	@media screen and (min-width: 1100px) { 
-		width: calc(100% + ((#{$spacing__content-lg} + #{$spacing__content-lg})));
-		margin-left: calc(-1 * (#{$spacing__content-lg})) !important;
-	}
-
+	width: calc(100% + (var(--sbtl-spacing-content) * 2));
+	margin-left: calc(var(--sbtl-spacing-content) * -1) !important;
 	box-sizing: border-box;
 }
 
@@ -50,16 +42,15 @@ body .is-layout-constrained > .alignwide,
 body .is-layout-constrained > .alignfull,
 .alignfull {
 	box-sizing: border-box;
-	width: calc(100% + #{$spacing__total-sm} + #{$spacing__total-sm});
-	margin-left: calc(-1 * #{$spacing__total-sm}) !important;
+	// Default behavior: break out of total padding (content + default)
+	width: calc(100% + (var(--sbtl-spacing-total) * 2));
+	margin-left: calc(var(--sbtl-spacing-total) * -1) !important;
 	max-width: unset;
-	@media screen and (min-width: 600px) { 
-		width: calc(100% + #{$spacing__total-md} + #{$spacing__total-md});
-		margin-left: calc(-1 * #{$spacing__total-md}) !important;
-	}
+
+	// Large screens: break out to viewport (full bleed)
 	@media screen and (min-width: 1100px) { 
 		width: 100vw;
-		margin-left: calc(-1 * (((100vw - 100%) / 2))) !important;
+		margin-left: calc(50% - 50vw) !important;
 	}
 } 
 

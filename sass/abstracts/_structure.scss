@@ -7,6 +7,24 @@
   --sbtl-spacing-content-lg: 13.8rem;
   --sbtl-spacing-content-md: 1rem;
   --sbtl-spacing-content-sm: 0rem;
+
+  // Dynamic spacing variables that change with breakpoints
+  --sbtl-spacing-default: var(--sbtl-spacing-default-sm);
+  --sbtl-spacing-content: var(--sbtl-spacing-content-sm);
+  --sbtl-spacing-total: calc(var(--sbtl-spacing-content) + var(--sbtl-spacing-default));
+
+  // Max width for large screens
+  --sbtl-max-width: 1500px;
+
+  @media screen and (min-width: 600px) {
+    --sbtl-spacing-default: var(--sbtl-spacing-default-md);
+    --sbtl-spacing-content: var(--sbtl-spacing-content-md);
+  }
+
+  @media screen and (min-width: 1100px) {
+    --sbtl-spacing-default: var(--sbtl-spacing-default-lg);
+    --sbtl-spacing-content: var(--sbtl-spacing-content-lg);
+  }
 }
 
 // Map SCSS variables to the CSS variables
