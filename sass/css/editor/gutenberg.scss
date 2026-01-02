@@ -10,7 +10,7 @@
 // Define the fonts path variable
 $fonts-path: '../../fonts/';
 
-.editor-styles-wrapper{
+.editor-styles-wrapper {
 
 	overflow-x: hidden;
 
@@ -119,14 +119,14 @@ $fonts-path: '../../fonts/';
 	@import "../../structure/wp-core";
 	@import "../../abstracts/fonts";
 
-	/* Alignments
-	--------------------------------------------- */
-	@import "../../utilities/alignments";
-
 	.block-editor-block-list__layout.is-root-container {
 		> * {
 			max-width: unset !important;
 		}
+
+		/* Alignments
+		--------------------------------------------- */
+		@import "../../utilities/alignments";
 	}
 
 	button.components-button {
