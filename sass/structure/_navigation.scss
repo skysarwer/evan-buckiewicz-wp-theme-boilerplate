@@ -36,6 +36,7 @@
 			overflow-y: hidden;
 			transition: 0.75s ease-in-out;
 			max-width: calc(100vw - 5.25em);
+			max-width: calc(100cqw - 5.25em);
 
 			&.offscreen {
 				visibility: visible;
@@ -56,6 +57,7 @@
 
 			a {
 				max-width: calc(100vw - 9em);
+				max-width: calc(100cqw - 9em);
 			}
 
 			@media screen and (min-width: 600px) {
@@ -298,7 +300,9 @@
 		transition: 1s ease-in-out;
 		height: 100vh;
 		left: calc(-1 * (100vw - 4.25em));
+		left: calc(-1 * (100cqw - 4.25em));
 		width: calc(100vw - 4.25em);
+		width: calc(100cqw - 4.25em);
 		top: 0;
 		padding-right: 1em;
 		pointer-events: none;
@@ -323,6 +327,7 @@
 		top: 5.75em;
 		left: 0;
 		width: 100vw;
+		width: 100cqw;
 		height: 100vh;
 		-webkit-backdrop-filter: blur(5px);
 		backdrop-filter: blur(5px);
