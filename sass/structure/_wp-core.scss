@@ -14,6 +14,13 @@
 .wp-block-media-text {
 	grid-gap: 2em;
 	position: relative;
+
+	&.alignfull {
+		.wp-block-media-text__content {
+			padding-right: 1.5em;
+			padding-left: 1.5em;
+		}
+	}
 }
 
 .wp-block-buttons {
@@ -72,7 +79,7 @@ li.wp-block-post h3 a {
 		width: 100%;
 	}
 
-	&.alignwide:has( > .wp-block-cover__inner-container.is-layout-constrained ) {
+	&.alignwide:not(.has-sidemenu .alignwide):has( > .wp-block-cover__inner-container.is-layout-constrained ) {
 		padding-left: var(--sbtl-spacing-content);
   		padding-right: var(--sbtl-spacing-content);
 	}
