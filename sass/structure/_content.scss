@@ -344,19 +344,25 @@
 				.entry-content{
 					--sbtl-spacing-content: 0px;
 					padding-left: 0 !important;
-					padding-right: 2.5rem !important;
 					
 					// .alignwide is handled automatically by --sbtl-spacing-content: 0
 
 					.alignfull { 
-						width: calc(100% + var(--sbtl-spacing-default)) !important;
-						margin-left: calc(var(--sbtl-spacing-default) * -1) !important;
-						padding-left: var(--sbtl-spacing-default) !important;
-						padding-right: var(--sbtl-spacing-default) !important;
+						--sbtl-alignfull-left-bleed: calc(var(--sbtl-spacing-total) + max(0px, (100vw - var(--sbtl-max-width)) / 2));
+						--sbtl-alignfull-right-bleed: 0px;
 
-						&.has-light-brown-background-color {
-							padding-right: 0 !important;
+						// Nested alignfull needs to break out of parent's right padding
+						& .alignfull {
+							--sbtl-alignfull-right-bleed: var(--sbtl-spacing-default);
 						}
+
+						width: calc(100% + var(--sbtl-alignfull-left-bleed) + var(--sbtl-alignfull-right-bleed)) !important;
+						margin-left: calc(-1 * var(--sbtl-alignfull-left-bleed)) !important;
+						margin-right: calc(-1 * var(--sbtl-alignfull-right-bleed)) !important;
+						
+						// Add padding so content inside aligns with the text column
+						padding-left: var(--sbtl-alignfull-left-bleed) !important;
+						padding-right: var(--sbtl-spacing-default) !important;
 						
 					}
 

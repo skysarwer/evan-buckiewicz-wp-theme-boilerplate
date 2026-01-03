@@ -40,7 +40,7 @@ body .is-layout-constrained > .alignwide,
 	margin-left: calc(var(--sbtl-spacing-content) * -1) !important;
 	box-sizing: border-box;
 
-	&.is-layout-constrained {
+	&.is-layout-constrained:not(.has-sidemenu .alignwide) {
 		padding-left: var(--sbtl-spacing-content);
 		padding-right: var(--sbtl-spacing-content);
 	}
