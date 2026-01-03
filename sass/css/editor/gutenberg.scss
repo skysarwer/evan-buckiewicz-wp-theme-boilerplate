@@ -12,6 +12,7 @@ $fonts-path: '../../fonts/';
 
 .editor-styles-wrapper {
 
+	container-type: inline-size;
 	overflow-x: hidden;
 
 	background: $color__background-body; 
@@ -42,14 +43,20 @@ $fonts-path: '../../fonts/';
 		@media screen and (min-width: 600px) { 
 			padding-left: $spacing__total-md;
 			padding-right: $spacing__total-md;
-			max-width: 150ch;
 		}
 
 		@media screen and (min-width: 1100px) { 
-			padding-left: $spacing__total-lg;
-			padding-right: $spacing__total-lg;
+			// Calculate padding to center content within max-width
+			// Formula: Base Padding + Half of the empty space outside max-width
+			// Fallback for browsers not supporting cqw
+			padding-left: calc(var(--sbtl-spacing-total) + max(0px, (100vw - var(--sbtl-max-width)) / 2));
+			padding-left: calc(var(--sbtl-spacing-total) + max(0px, (100cqw - var(--sbtl-max-width)) / 2));
+
+			padding-right: calc(var(--sbtl-spacing-total) + max(0px, (100vw - var(--sbtl-max-width)) / 2));
+			padding-right: calc(var(--sbtl-spacing-total) + max(0px, (100cqw - var(--sbtl-max-width)) / 2));
+			
 			margin: 0 auto;
-			max-width: var(--sbtl-max-width);
+			max-width: unset;
 		}
 	}
 
@@ -151,9 +158,6 @@ $fonts-path: '../../fonts/';
 	.wp-block.aligncenter {
 		width: min-content;
 	}
-
-	// Editor-specific alignment overrides to fix "funky" behavior
-	// The editor container is already capped at max-width, so we don't need viewport logic here.
 	
 	// Fix Align Wide: Ensure it breaks out of the content column correctly
 	.wp-block[data-align="wide"] {
@@ -169,6 +173,15 @@ $fonts-path: '../../fonts/';
 		width: calc(100% + (var(--sbtl-spacing-total) * 2));
 		margin-left: calc(var(--sbtl-spacing-total) * -1) !important;
 		margin-right: calc(var(--sbtl-spacing-total) * -1) !important;
+
+		@media screen and (min-width: 1100px) {
+			width: 100vw;
+			width: 100cqw;
+			margin-left: calc(50% - 50vw) !important;
+			margin-left: calc(50% - 50cqw) !important;
+			margin-right: calc(50% - 50vw) !important;
+			margin-right: calc(50% - 50cqw) !important;
+		}
 
 		// Reset inner padding to simple values (no viewport math needed in editor)
 		padding-left: var(--sbtl-spacing-total);

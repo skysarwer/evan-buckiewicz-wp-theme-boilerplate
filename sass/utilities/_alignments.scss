@@ -26,6 +26,13 @@
 	margin-bottom: 1.5em;
 }
 
+// Override WordPress Core Layout Constraints
+.is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+	max-width: unset !important;
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+}
+
 body .is-layout-constrained > .alignwide,
 .alignwide {
 	max-width: unset;
