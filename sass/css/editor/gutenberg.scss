@@ -37,13 +37,8 @@ $fonts-path: '../../fonts/';
 	}
 
 	.wp-block-post-content {
-		padding-left: $spacing__total-sm;
-		padding-right: $spacing__total-sm;
-
-		@media screen and (min-width: 600px) { 
-			padding-left: $spacing__total-md;
-			padding-right: $spacing__total-md;
-		}
+		padding-left: var(--sbtl-spacing-total);
+		padding-right: var(--sbtl-spacing-total);
 
 		@media screen and (min-width: 1100px) { 
 			// Calculate padding to center content within max-width
@@ -165,6 +160,11 @@ $fonts-path: '../../fonts/';
 		width: calc(100% + (var(--sbtl-spacing-content) * 2));
 		margin-left: calc(var(--sbtl-spacing-content) * -1) !important;
 		margin-right: calc(var(--sbtl-spacing-content) * -1) !important;
+
+		&.is-layout-constrained {
+			padding-left: var(--sbtl-spacing-content);
+			padding-right: var(--sbtl-spacing-content);
+		}
 	}
 
 	// Fix Align Full: Just fill the container (break out of total padding)
