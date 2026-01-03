@@ -67,6 +67,17 @@ li.wp-block-post h3 a {
 	@include total-wrap;
 }
 
+.wp-block-cover {
+	.wp-block-cover__inner-container.is-layout-constrained {
+		width: 100%;
+	}
+
+	&.alignwide:has( > .wp-block-cover__inner-container.is-layout-constrained ) {
+		padding-left: var(--sbtl-spacing-content);
+  		padding-right: var(--sbtl-spacing-content);
+	}
+}
+
 .wp-block-post.hover {
 
 	h3 a {

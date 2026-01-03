@@ -14,7 +14,7 @@
   --sbtl-spacing-total: calc(var(--sbtl-spacing-content) + var(--sbtl-spacing-default));
 
   // Max width for large screens
-  --sbtl-max-width: 1500px;
+  --sbtl-max-width: 1920px;
 
   @media screen and (min-width: 600px) {
     --sbtl-spacing-default: var(--sbtl-spacing-default-md);
