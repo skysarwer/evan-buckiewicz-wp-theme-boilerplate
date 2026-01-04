@@ -24,6 +24,8 @@
 @mixin entry-content {
 	padding-left: var(--sbtl-spacing-content);
 	padding-right: var(--sbtl-spacing-content);
+	position: relative;
+	z-index: 1;
 
 	@media screen and (min-width: 1100px) { 
 		margin: 0 auto;

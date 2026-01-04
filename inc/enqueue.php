@@ -91,6 +91,10 @@ function enqueue_editor_css() {
 	 */
 	if ($sidebar_layout === true) {
 		wp_enqueue_style( 'disable-alignments', get_stylesheet_directory_uri() . '/css/editor/disable-alignments.css' );
+		add_filter('admin_body_class', function( $classes ) {
+			$classes .= ' has-sidemenu';
+			return $classes;
+		} );
 	}
 }
 add_action( 'enqueue_block_editor_assets', 'enqueue_editor_css' );

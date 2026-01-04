@@ -10,6 +10,31 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+
+	<?php
+	//check if page has thumbnail
+	if ( $args['template'] == 'cover' && has_post_thumbnail() ) {
+		//get the thumbnail url
+		$thumbnail_large = get_the_post_thumbnail_url( null, 'large' );
+		//get the srcset
+		$srcset = wp_get_attachment_image_srcset( get_post_thumbnail_id(), 'large' );
+
+		//get the alt text
+		$alt = get_post_meta( get_post_thumbnail_id(), '_wp_attachment_image_alt', true );
+		
+		$cover_class = 'sbtl-cover';
+
+		if (get_post_meta( get_the_id(), 'with_overlay' , true) == 1) {
+			$cover_class .= ' with-overlay';
+		}
+		
+		?>
+		<div class="<?php echo $cover_class; ?>">
+			<img srcset="<?php echo esc_attr( $srcset ); ?>" sizes="100vw" alt="<?php echo esc_attr( $alt ); ?>" class="sbtl-cover-img">
+		</div>
+	<?php
+	}
+	?>
 	
 	<?php if(get_post_meta(get_the_id(), 'hide_title' , true) != 1 && $args['template'] != 'cover'): ?> 
 		<header class="entry-header">
