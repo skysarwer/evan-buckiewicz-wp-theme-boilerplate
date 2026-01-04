@@ -57,3 +57,15 @@
 		font-size: 3em;
 	}
 }
+
+@mixin responsive-grid-columns($cols-mobile: 1, $cols-tablet: 2, $cols-desktop: 3) {
+	grid-template-columns: repeat($cols-mobile, 1fr);
+
+	@media screen and (min-width: $bp-tablet) {
+		grid-template-columns: repeat($cols-tablet, 1fr);
+	}
+
+	@media screen and (min-width: $bp-desktop) {
+		grid-template-columns: repeat($cols-desktop, 1fr);
+	}
+}

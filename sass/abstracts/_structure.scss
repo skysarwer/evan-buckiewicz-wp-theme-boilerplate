@@ -39,3 +39,8 @@ $spacing__content-sm: var(--sbtl-spacing-content-sm);
 $spacing__total-lg: calc(#{$spacing__content-lg} + #{$spacing__default-lg});
 $spacing__total-md: calc(#{$spacing__content-md} + #{$spacing__default-md});
 $spacing__total-sm: calc(#{$spacing__content-sm} + #{$spacing__default-sm});
+
+// Breakpoints
+$bp-tablet: 600px;
+$bp-desktop: 1100px;
+$bp-wide: 1500px;
