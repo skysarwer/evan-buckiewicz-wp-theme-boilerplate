@@ -17,8 +17,10 @@
 
 	&.alignfull {
 		.wp-block-media-text__content {
-			padding-right: 1.5em;
-			padding-left: 1.5em;
+			padding-right: var(--sbtl-spacing-content);
+			padding-left: var(--sbtl-spacing-content);
+			max-width: var(--sbtl-max-width);
+			margin: 0 auto;
 		}
 	}
 }
