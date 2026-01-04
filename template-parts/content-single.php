@@ -124,6 +124,7 @@ if ( has_post_thumbnail() ) {
 					$thumbnail_medium = wp_get_attachment_image_url($picture, 'thumbnail');
 					$thumbnail_large = wp_get_attachment_image_url($picture, 'large');
 					$srcset = wp_get_attachment_image_srcset($picture, 'large');
+					$alt = get_post_meta( $picture, '_wp_attachment_image_alt', true );
 
 					if ($picture) {
 						$thumbnail_image = wp_get_attachment_image( $picture, 'thumbnail' );
