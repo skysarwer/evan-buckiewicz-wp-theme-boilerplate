@@ -38,7 +38,6 @@ if ( has_post_thumbnail() ) {
 
 			//get the thumbnail url
 			$thumbnail_large = get_the_post_thumbnail_url( null, 'large' );
-			$thumbnail_medium = get_the_post_thumbnail_url( null, 'medium' );        
 			//get the srcset
 			$srcset = wp_get_attachment_image_srcset( get_post_thumbnail_id(), 'large' );
 
@@ -52,7 +51,7 @@ if ( has_post_thumbnail() ) {
 			}
 			?>
 			<div class="<?php echo $cover_class; ?>">
-				<img data-srcset="<?php echo esc_attr( $srcset ); ?>" data-lowsrc="<?php echo esc_url( $thumbnail_medium );?> " sizes="100vw" alt="<?php echo esc_attr( $alt ); ?>" class="sbtl-cover-img lazyload">
+				<img srcset="<?php echo esc_attr( $srcset ); ?>" sizes="100vw" alt="<?php echo esc_attr( $alt ); ?>" class="sbtl-cover-img lazyload">
 			</div>
 
 		<?php endif; ?>
