@@ -52,39 +52,65 @@ a.header-top-bar {
         }
     }
 
+    .nav-bar {
+        width: 1.25em;
+        height: 0.275em;
+        margin-bottom: 0.125em;
+        display: block;
+        position: relative;
+       // transition: 0.2s ease-in;
+        border-top: 2px solid currentColor;
+        transition: opacity 0.2s ease-in 0.2s;
+        
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .main-navigation.untoggled {
+        
+       .nav-bar {
+
+            &:nth-child(2) {
+             
+                animation: nav-bar-top-rvs 0.4s ease-in forwards;
+            }
+            &:nth-child(4) {
+                animation: nav-bar-bottom-rvs 0.4s ease-in forwards;    
+            }
+        }
+    }
+
     .menu-toggle {
         background: none;
         border: none;
         padding: 0;
         border-radius: 0;
         z-index: 9999;
-        overflow: hidden;
         color: $header_nav-text;
         position: relative;
-
-        .line {
-            transition: all 0.9s ease-in, stroke-dasharray 0.45s ease-out;
-            stroke-dasharray: 60 31 60 300;
-        }
-
-        svg {
-            transition: 0.9s ease-in;
-            width: 2.5em;
-            height: 2.5em;
-        }
+        margin-left: 0.5em;
 
 
         &[aria-expanded="true"] {
 
-            svg {
-                rotate: 0.125turn;
-                translate: 2px -2px;
+            .nav-bar {
+                border-color: #000;
+                &:nth-child(2) {
+                animation: nav-bar-top 0.4s ease-in forwards;
+                transition: 0.2s ease-in;
+                transform-origin: 10.75px 1.75px;
+                }
+                &:nth-child(3) {
+                   opacity: 0;
+                   transition: opacity 0s;
+                }
+                &:nth-child(4) {
+                    animation: nav-bar-bottom 0.4s ease-in forwards;
+                    transform-origin: 14.5px 1.75px;
+                    transition: 0.2s ease-in;
+                }
             }
-
-            .line {
-                stroke-dasharray: 60 104 60 300;
-                stroke-dashoffset: -90;
-              }
 
         }
     }
@@ -183,5 +209,57 @@ a.header-top-bar {
             margin: 0 auto;
             display: block;
         }
+    }
+}
+
+@keyframes nav-bar-top {
+
+    0% {
+        transform: none;
+    }
+
+    65% {
+        transform: translateY(0.525em);
+    }
+    100% {
+        transform: translateY(0.525em) rotate(45deg);
+    }
+}
+    
+@keyframes nav-bar-bottom {
+
+    65% {
+        transform: translateY(-0.525em);
+    }
+    100% {
+        transform: translateY(-0.525em) rotate(-45deg);
+    }
+}
+
+@keyframes nav-bar-top-rvs {
+
+    0% {
+        transform: translateY(0.525em) rotate(45deg);
+    }
+
+    65% {
+        transform: translateY(0.525em) rotate(0);
+    }
+    100% {
+        transform: rotate(0);
+    }
+}
+
+@keyframes nav-bar-bottom-rvs {
+
+    0% {
+        transform: translateY(-0.525em) rotate(-45deg);
+    }
+
+    65% {
+        transform: translateY(-0.525em);
+    }
+    100% {
+        transform: rotate(0);
     }
 }

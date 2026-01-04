@@ -68,14 +68,7 @@ $post_type = get_post_type();
 		</div>
 
 		<nav id="site-navigation" class="main-navigation">
-			<!-- Mobile Menu Toggle Button with custom SVG icon -->
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-				<span class="screen-reader-text"><?php esc_html_e( 'Primary Menu', 'sbtl' ); ?></span>
-				<svg fill="none" viewBox="-10 -10 120 120" width="250">
-					<path class="strtext line" stroke-width="5" stroke-linejoin="round" d="m 20 40 h 60 a 1 1 0 0 1 0 20 h -60 a 1 1 0 0 1 0 -40 h 30 v 70">
-					</path>
-				</svg>
-			</button>
+			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><span class="screen-reader-text"><?php esc_html_e( 'Primary Menu', 'sbtl' ); ?></span><span class="nav-bar"></span><span class="nav-bar"></span><span class="nav-bar"></span></button>
 			<?php
 			/**
 			 * Display the primary navigation menu.

@@ -314,25 +314,6 @@
 		left: 0;
 	}
 
-	.main-navigation .nav-overlay {
-		-webkit-backdrop-filter: blur(0);
-		backdrop-filter: blur(0);
-		transition: 0.5s ease-in-out;
-	}
-
-	.main-navigation.toggled > .nav-overlay {
-
-		pointer-events: none;
-		position: fixed;
-		top: 5.75em;
-		left: 0;
-		width: 100vw;
-		width: 100cqw;
-		height: 100vh;
-		-webkit-backdrop-filter: blur(5px);
-		backdrop-filter: blur(5px);
-	}
-
 	/*
 	.main-navigation #primary-menu > li:last-of-type > a, .has-lang-switcher #primary-menu > li:nth-last-child(2) > a {
 		border-color: var(--palette-dark-brown) !important;
