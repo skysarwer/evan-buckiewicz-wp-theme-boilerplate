@@ -148,7 +148,7 @@ if ( has_post_thumbnail() ) {
 					}
 
 					if ( $author_link ) {
-						echo '<a class="sbtl-link" href="' . $author_link['url'] . '" target="' . $author_link['target'] . '">' . $author_link['title'] . sbtl_caret_arrow_fancy_svg() .'</a>';
+						echo '<a class="sbtl-link" href="' . $author_link['url'] . '" target="' . $author_link['target'] . '">' . $author_link['title'] . sbtl_caret_arrow_svg() .'</a>';
 					}
 					?>
 				</div>

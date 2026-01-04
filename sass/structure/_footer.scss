@@ -89,6 +89,10 @@
     }
 }
 
+:where(.site-footer) {
+    background-color: var(--sbtl-bg);
+}
+
 /*@keyframes arrow-path {
     0% {
         transform: rotate(22.4deg);

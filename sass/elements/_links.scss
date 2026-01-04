@@ -41,25 +41,16 @@ a.sbtl-link {
 		margin-left: 0.5em;
 
 		path {
-			fill: var(--sbtl-text-body);
+			fill: currentColor;
 		}
 		line {
-			stroke: var(--sbtl-text-body);
+			stroke: currentColor;
 		}
 	}
 
 	&:hover, &:focus-visible {
 		color: var(--sbtl-link-hover);
 		text-decoration: none;
-
-		svg.arrow {
-			path {
-				fill: var(--sbtl-link-hover);
-			}
-			line {
-				stroke: var(--sbtl-link-hover);
-			}
-		}
 	}
 }
 

@@ -128,6 +128,10 @@
 		width: 1.325em;
 		height: 1.325em;
 		fill: transparent;
+
+		.filltext {
+			fill: currentColor;
+		}
 	}
 
 	&:hover, &:focus {
