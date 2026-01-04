@@ -15,7 +15,13 @@ get_header();
  * use WooCommerce default template instead of standard single post layout.
  */
 if ( class_exists( 'WooCommerce' ) && is_product() ) {
-	get_template_part( 'template-parts/content-single', 'page',  array( 'template' => 'woocommerce' )  );
+	?>
+	<main id="primary" class="site-main" data-wp-interactive="sbtl" data-wp-router-region="main">
+		<div class="content-wrap">
+			<?php get_template_part( 'template-parts/content-single', 'page',  array( 'template' => 'woocommerce' )  ); ?>
+		</div>
+	</main>
+	<?php
 	return;
 }
 
@@ -26,7 +32,7 @@ if ( class_exists( 'WooCommerce' ) && is_product() ) {
  */
 $post_type = get_post_type();
 if ( $post_type !== 'post' ) { ?>
-	<main id="primary" class="site-main">
+	<main id="primary" class="site-main" data-wp-interactive="sbtl" data-wp-router-region="main">
 		<div class="content-wrap">
 			<?php
 			// Check for post-type-specific template (e.g., content-single-event.php)
@@ -58,7 +64,7 @@ wp_enqueue_script(
 
 ?>
 
-	<main id="primary" class="site-main has-sidemenu">
+	<main id="primary" class="site-main has-sidemenu" data-wp-interactive="sbtl" data-wp-router-region="main">
 		<div class="content-wrap">
 			<?php
 			/**
@@ -120,7 +126,7 @@ wp_enqueue_script(
 
 								?>
 								<li class="sidemenu__item <?php echo $is_active;?>">
-									<a href="<?php the_permalink(); ?>" class="sidemenu__link">
+									<a href="<?php the_permalink(); ?>" class="sidemenu__link" data-wp-on--click="actions.navigate">
 										<?php echo get_the_title(); ?>
 									</a>
 								</li>

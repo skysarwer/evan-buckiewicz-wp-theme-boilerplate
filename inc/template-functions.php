@@ -65,19 +65,28 @@ function sbtl_share_widget() {
 
     // Add sharing button at the end of page/page content
     $content = '<div class="sbtl-social-share flex">';
-    $content .= '<a class="sbtl-link sbtl-facebook" href="javascript:void(0);" onclick="openShareWindow(\''.$facebookURL.'\')">'.sbtl_fb_svg().'<span class="screen-reader-text">'.sprintf(__('Share on %s', 'sbtl'), 'Facebook').'</span></a>';
-    $content .= '<a class="sbtl-link sbtl-twitter" href="javascript:void(0);" onclick="openShareWindow(\''.$twitterURL.'\')">'.sbtl_twitter_svg().'<span class="screen-reader-text">'.sprintf(__('Share on %s', 'sbtl'), 'Twitter').'</span></a>';
-    $content .= '<a class="sbtl-link sbtl-linkedin" href="javascript:void(0);" onclick="openShareWindow(\''.$linkedInURL.'\')">'.sbtl_linkedin_svg().'<span class="screen-reader-text">'.sprintf(__('Share on %s', 'sbtl'), 'LinkedIn').'</span></a>';
-    $content .= '<a class="sbtl-link sbtl-reddit" href="javascript:void(0);" onclick="openShareWindow(\''.$redditURL.'\')">'.sbtl_reddit_svg().'<span class="screen-reader-text">'.sprintf(__('Share on %s', 'sbtl'), 'Reddit').'</span></a>';
-    $content .= '<a class="sbtl-link sbtl-tumblr" href="javascript:void(0);" onclick="openShareWindow(\''.$tumblrURL.'\')">'.sbtl_tumblr_svg().'<span class="screen-reader-text">'.sprintf(__('Share on %s', 'sbtl'), 'Tumblr').'</span></a>';
-    $content .= '<a class="sbtl-link sbtl-pinterest" href="javascript:void(0);" onclick="openShareWindow(\''.$pinterestURL.'\')" data-pin-custom="true">'.sbtl_pinterest_svg().'<span class="screen-reader-text">'.sprintf(__('Share on %s', 'sbtl'), 'Pinterest').'</span></a>';
+    $content .= '<a class="sbtl-link sbtl-facebook js-share-link" href="#" data-share-url="'.$facebookURL.'">'.sbtl_fb_svg().'<span class="screen-reader-text">'.sprintf(__('Share on %s', 'sbtl'), 'Facebook').'</span></a>';
+    $content .= '<a class="sbtl-link sbtl-twitter js-share-link" href="#" data-share-url="'.$twitterURL.'">'.sbtl_twitter_svg().'<span class="screen-reader-text">'.sprintf(__('Share on %s', 'sbtl'), 'Twitter').'</span></a>';
+    $content .= '<a class="sbtl-link sbtl-linkedin js-share-link" href="#" data-share-url="'.$linkedInURL.'">'.sbtl_linkedin_svg().'<span class="screen-reader-text">'.sprintf(__('Share on %s', 'sbtl'), 'LinkedIn').'</span></a>';
+    $content .= '<a class="sbtl-link sbtl-reddit js-share-link" href="#" data-share-url="'.$redditURL.'">'.sbtl_reddit_svg().'<span class="screen-reader-text">'.sprintf(__('Share on %s', 'sbtl'), 'Reddit').'</span></a>';
+    $content .= '<a class="sbtl-link sbtl-tumblr js-share-link" href="#" data-share-url="'.$tumblrURL.'">'.sbtl_tumblr_svg().'<span class="screen-reader-text">'.sprintf(__('Share on %s', 'sbtl'), 'Tumblr').'</span></a>';
+    $content .= '<a class="sbtl-link sbtl-pinterest js-share-link" href="#" data-share-url="'.$pinterestURL.'" data-pin-custom="true">'.sbtl_pinterest_svg().'<span class="screen-reader-text">'.sprintf(__('Share on %s', 'sbtl'), 'Pinterest').'</span></a>';
     $content .= '</div>';
 
     $content .= '
     <script>
-    function openShareWindow(url) {
-        window.open(url, "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=400,height=400");
-    }
+    document.addEventListener("DOMContentLoaded", function() {
+        document.body.addEventListener("click", function(e) {
+            var link = e.target.closest(".js-share-link");
+            if (link) {
+                e.preventDefault();
+                var url = link.getAttribute("data-share-url");
+                if (url) {
+                    window.open(url, "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=400,height=400");
+                }
+            }
+        });
+    });
     </script>
     ';
 

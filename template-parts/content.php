@@ -26,7 +26,7 @@ if (isset($args['level'])) {
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<!-- Clickable overlay link covering the entire card for better UX -->
-	<a href="<?php echo esc_url( get_permalink() ) ;?>" rel="bookmark" aria-label="<?php echo get_the_title();?>">	</a>
+	<a href="<?php echo esc_url( get_permalink() ) ;?>" data-wp-on--click="actions.navigate" rel="bookmark" aria-label="<?php echo get_the_title();?>">	</a>
 	<div class="post__card-body">
 		<div>
 			<header>

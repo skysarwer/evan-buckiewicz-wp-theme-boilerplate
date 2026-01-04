@@ -20,7 +20,8 @@ if ( !is_tax()) {
 }
 ?>
 
-	<main id="primary" class="site-main content-wrap">
+	<main id="primary" class="site-main" data-wp-interactive="sbtl" data-wp-router-region="main">
+		<div class="content-wrap">
 
 		<?php if ( have_posts() ) : 
 			
@@ -130,6 +131,7 @@ if ( !is_tax()) {
 			<?php endif; ?>
 		<?php endif; ?>
 
+	</div>
 	</main><!-- #main -->
 
 <?php

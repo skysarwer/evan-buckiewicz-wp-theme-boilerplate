@@ -10,7 +10,7 @@
 get_header();
 ?>
 
-	<main id="primary" class="site-main">
+	<main id="primary" class="site-main" data-wp-interactive="sbtl" data-wp-router-region="main">
 		<div class="content-wrap">
 
 		<?php if ( have_posts() ) : ?>

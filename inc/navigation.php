@@ -80,11 +80,11 @@ class SBTL_Walker_Page_Sidemenu extends Walker_Page {
         }
         // Page with children - render as link with dropdown toggle
         else if ( !empty($children) ) {
-            $output .= '<li class="' . $css_class . '"><span class="sidemenu__subwrap"><a class="sidemenu__link" href="' . get_permalink($page->ID) . '">' . $link_before . apply_filters( 'the_title', $page->post_title, $page->ID ) . $link_after . '</a>' . $dropdown . '</span>';
+            $output .= '<li class="' . $css_class . '"><span class="sidemenu__subwrap"><a class="sidemenu__link" data-wp-on--click="actions.navigate" href="' . get_permalink($page->ID) . '">' . $link_before . apply_filters( 'the_title', $page->post_title, $page->ID ) . $link_after . '</a>' . $dropdown . '</span>';
         } 
         // Page without children - simple link
         else {
-            $output .= '<li class="' . $css_class . '"><a class="sidemenu__link" href="' . get_permalink($page->ID) . '">' . $link_before . apply_filters( 'the_title', $page->post_title, $page->ID ) . $link_after . '</a>';
+            $output .= '<li class="' . $css_class . '"><a class="sidemenu__link" data-wp-on--click="actions.navigate" href="' . get_permalink($page->ID) . '">' . $link_before . apply_filters( 'the_title', $page->post_title, $page->ID ) . $link_after . '</a>';
         }
     }
 

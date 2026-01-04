@@ -121,6 +121,15 @@ function sbtl_scripts() {
 
 	wp_enqueue_script( 'sbtl-group-css-vars', get_template_directory_uri() . '/js/addCssVarToGroups.js', array(), SBTL_VERSION, true );
 
+	if ( function_exists( 'wp_enqueue_script_module' ) ) {
+		wp_enqueue_script_module( 
+			'sbtl-router', 
+			get_template_directory_uri() . '/js/router.js', 
+			array( '@wordpress/interactivity', '@wordpress/interactivity-router' ), 
+			SBTL_VERSION 
+		);
+	}
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}

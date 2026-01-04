@@ -43,7 +43,7 @@ if (count($children) > 0 || count($parent) > 0) {
 get_header();
 ?>	
 
-	<main id="primary" class="<?php echo $var_class;?>">
+	<main id="primary" class="<?php echo $var_class;?>" data-wp-interactive="sbtl" data-wp-router-region="main">
 		<div class="content-wrap">
 			<?php
 

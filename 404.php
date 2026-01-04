@@ -22,7 +22,13 @@ get_header();
 	    $not_found_template .= '-' . pll_current_language();
 	}
 
-	// Render the 404 page using block template part
-	block_template_part( $not_found_template );
+	?>
+	<main id="primary" class="site-main" data-wp-interactive="sbtl" data-wp-router-region="main">
+		<?php
+		// Render the 404 page using block template part
+		block_template_part( $not_found_template );
+		?>
+	</main>
+	<?php
 
 get_footer();
