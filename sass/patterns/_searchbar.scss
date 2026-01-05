@@ -4,6 +4,7 @@
 
 	div[role="combobox"] {
 		display: flex;
+		padding: 0 1em;
 	}
 
 	input[type="search"] {
@@ -21,15 +22,17 @@
 
 	.search-btn {
 		border: 0;
-		padding: 0;
+		padding: 0.25em;
 		margin: auto;
-		padding: 0 1em;
+		margin-left: 0.75em;
 	}
 
     .search-clear-btn {
     	border: 0;
-		padding: 0;
+		padding: 0.25em;
 		background: transparent;
+		margin: auto;
+		margin-left: 0.25em;
 		color: var(--sbtl-text-body);
         
         &:hover, &:focus {
@@ -39,6 +42,8 @@
 		svg {
 			width: 1em;
 			height: 1.325em;
+			padding: 0 0.1625em;
+			box-sizing: content-box;
 		}
     }
 }
@@ -66,7 +71,7 @@
 
 	.search-group-title {
 		font-family: $font__bold;
-		font-size: 1.8em;
+		font-size: 1.2em;
 		padding: 0 0.5em;
 		color: $color__text-main;
 		margin-bottom: 0.5rem;

@@ -47,7 +47,7 @@ store( 'sbtl', {
             },
             handleFocus: () => {
                 const state = store( 'sbtl' ).state.search;
-                if ( state.hasResults ) {
+                if ( state.query.length >= 3 ) {
                     state.isOpen = true;
                 }
             },
@@ -87,9 +87,7 @@ store( 'sbtl', {
                                 });
 								
 								// Open dropdown if we have results
-								if (state.results.length > 0) {
-									state.isOpen = true;
-								}
+								state.isOpen = true;
 							}
 						} catch ( jsonError ) {
 							console.error( 'Search JSON Parse Error:', jsonError );
