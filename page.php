@@ -66,7 +66,7 @@ get_header();
 							<?php if (count($parent) > 0) {
 								// Link to top parent if this is a child page
 								?>
-								<a href="<?php echo get_permalink($top_parent->ID); ?>" class="sidemenu__link">
+								<a href="<?php echo get_permalink($top_parent->ID); ?>" data-wp-on--click="actions.navigate" class="sidemenu__link">
 									<h2><?php echo sbtl_caret_arrow_svg();?><?php echo $top_parent_title; ?></h2>
 								</a>
 							<?php } else { ?>

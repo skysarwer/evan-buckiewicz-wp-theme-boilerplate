@@ -18,11 +18,10 @@ a.header-top-bar {
     padding-bottom: 1em;
     justify-content: space-between;
     align-items: center;
-    position: relative;
-    z-index: 99;
-    background: $header_bg;
-    position: relative;
+    position: sticky;
     top: 0;
+    z-index: 999;
+    background: $header_bg;
 
     .logo {
         display: flex;

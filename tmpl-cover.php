@@ -51,7 +51,7 @@ if (count($children) > 0 || count($parent) > 0) {
                         <header class="sidemenu__title">
                             <?php if (count($parent) > 0) {
                                 ?>
-                                <a href="<?php echo get_permalink($top_parent->ID); ?>" class="sidemenu__link">
+                                <a href="<?php echo get_permalink($top_parent->ID); ?>" class="sidemenu__link" data-wp-on--click="actions.navigate">
                                     <h2><?php echo sbtl_caret_arrow_svg();?><?php echo $top_parent_title; ?></h2>
                                 </a>
                             <?php } else { ?>

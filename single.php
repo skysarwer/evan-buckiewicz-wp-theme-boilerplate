@@ -91,7 +91,7 @@ wp_enqueue_script(
 				<nav class="sidemenu__wrap" aria-label="<?php echo sprintf( __('%1$s navigation', 'sbtl'), $cat_title);?>" >
 					<header class="sidemenu__title">
 						
-						<a href="<?php echo $cat_link; ?>" class="sidemenu__link">
+						<a href="<?php echo $cat_link; ?>" class="sidemenu__link" data-wp-on--click="actions.navigate">
 							<?php 
 							// Display category SVG icon if available
 							if (get_term_meta($first_category->term_id, 'svg_icon', true) ) {	?>
