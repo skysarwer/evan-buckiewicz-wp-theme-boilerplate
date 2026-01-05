@@ -3,7 +3,7 @@
         <label>
             <span class="screen-reader-text"><?php echo _x( 'Search for:', 'label' ) ?></span>
             <input 
-                type="search" 
+                type="text" 
                 autocomplete="off" 
                 class="search-field" 
                 placeholder="<?php echo esc_attr_x( 'What can we help you find?', 'rar' ) ?>" 
