@@ -394,9 +394,9 @@
 
 				.sidemenu__wrap {
 					position: sticky;
-					top: 7em;
+					top: calc(var(--sbtl-header-height) + 1.25em);
 					font-size: 0.875em;
-					max-height: calc(100vh - 7em);
+					max-height: calc(100vh - (var(--sbtl-header-height) + 1.25em));
 					overflow-y: auto;
 					scrollbar-width: thin;
 					scrollbar-color: var(--sbtl-scrollbar-thumb) var(--sbtl-bg);
