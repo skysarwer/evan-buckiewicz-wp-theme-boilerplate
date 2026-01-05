@@ -105,8 +105,6 @@ $post_type = get_post_type();
 					<?php get_search_form();?>
 				
 				</div>
-				<div class="search-loading">
-				</div>	
 			</div>
 			</div>
 		</div>

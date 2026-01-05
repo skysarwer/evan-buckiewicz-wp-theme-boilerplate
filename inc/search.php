@@ -10,6 +10,15 @@ add_action('init', 'sbtl_search_ajax_url');
 function sbtl_search_index() {
     global $wp_query;
     $search_param = $wp_query->get('search_key');
+
+    // Fallback: Extract from URL if rewrite rule failed
+    if (empty($search_param) && strpos($_SERVER['REQUEST_URI'], 'sbtl_search_index') !== false) {
+        $path_parts = explode('sbtl_search_index/', $_SERVER['REQUEST_URI']);
+        if (isset($path_parts[1])) {
+            $search_param = sanitize_text_field(urldecode(trim($path_parts[1], '/')));
+        }
+    }
+
     $index_count = 0;
 
     if (!empty($search_param)) {
@@ -18,13 +27,11 @@ function sbtl_search_index() {
         //remove_filter( 'the_posts', 'relevanssi_query', 99 );
 
         $autocomplete_index = array (
-            'pages' => array(),
-            'upcoming_events' => array(),
-            'past_events' => array(),
-            'categories' => array(),
+            'Pages' => array(),
+            'Upcoming Events' => array(),
+            'Past Events' => array(),
+            'Categories' => array(),
         );
-
-        add_filter( 'posts_where', 'sbtl_title_filter', 10, 2 );
 
         $queried_cat = get_terms(
             array(
@@ -36,9 +43,7 @@ function sbtl_search_index() {
         if (!empty($queried_cat)) {
             foreach ($queried_cat as $cat) {
 
-                $autocomplete_index['test'][] = $cat->slug;
-
-                $autocomplete_index[$cat->slug] = array ();
+                $autocomplete_index[$cat->name] = array ();
 
                 $cat_posts = new WP_Query( array(
                     'post_type' => 'post',
@@ -51,9 +56,11 @@ function sbtl_search_index() {
 
                     while ($cat_posts->have_posts()) : $cat_posts->the_post();
 
-                        $autocomplete_index[$cat->slug][] = array (
+                        $autocomplete_index[$cat->name][] = array (
                             'name' => get_the_title(),
-                            'url' => get_the_permalink()
+                            'url' => get_the_permalink(),
+                            'id' => 'post-' . get_the_ID() . '-cat-' . $cat->slug,
+                            'action' => '', // Default to SPA navigation
                         );
 
                         $index_count++;
@@ -84,9 +91,11 @@ function sbtl_search_index() {
                     $indexed_upcoming_events++;
 
                     if ($indexed_upcoming_events < 5) {
-                        $autocomplete_index['upcoming_events'][] = array (
+                        $autocomplete_index['Upcoming Events'][] = array (
                             'name' => get_the_title(),
-                            'url' => get_the_permalink()
+                            'url' => get_the_permalink(),
+                            'id' => 'event-' . get_the_ID() . '-upcoming',
+                            'action' => '',
                         );
 
                         $index_count++;
@@ -96,9 +105,11 @@ function sbtl_search_index() {
                     $indexed_past_events++;
 
                     if ($indexed_past_events < 5) {
-                        $autocomplete_index['past_events'][] = array (
+                        $autocomplete_index['Past Events'][] = array (
                             'name' => get_the_title(),
-                            'url' => get_the_permalink()
+                            'url' => get_the_permalink(),
+                            'id' => 'event-' . get_the_ID() . '-past',
+                            'action' => '',
                         );
 
                         $index_count++;
@@ -124,9 +135,11 @@ function sbtl_search_index() {
 
             while ($indexed_pages->have_posts()) : $indexed_pages->the_post();
 
-                $autocomplete_index['pages'][] = array (
+                $autocomplete_index['Pages'][] = array (
                     'name' => get_the_title(),
-                    'url' => get_the_permalink()
+                    'url' => get_the_permalink(),
+                    'id' => 'page-' . get_the_ID(),
+                    'action' => '',
                 );
 
                 $index_count++;
@@ -151,9 +164,11 @@ function sbtl_search_index() {
             ));
 
         foreach($indexed_cat as $term) {
-            $autocomplete_index['categories'][] = array(
+            $autocomplete_index['Categories'][] = array(
                 'name' => $term->name,
-                'url' => get_term_link($term->term_id, $term->taxonomy)
+                'url' => get_term_link($term->term_id, $term->taxonomy),
+                'id' => 'term-' . $term->term_id,
+                'action' => '',
             );
 
             $index_count++;
@@ -170,7 +185,7 @@ function sbtl_search_index() {
         wp_send_json_success($autocomplete_index);
 
         remove_filter( 'posts_where', 'sbtl_title_filter' );
-
+        exit;
     }
 }
 

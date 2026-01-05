@@ -397,41 +397,10 @@
 					top: calc(var(--sbtl-header-height) + 1.25em);
 					font-size: 0.875em;
 					max-height: calc(100vh - (var(--sbtl-header-height) + 1.25em));
-					overflow-y: auto;
-					scrollbar-width: thin;
-					scrollbar-color: var(--sbtl-scrollbar-thumb) var(--sbtl-bg);
 					width: calc(100% + 1em);
 					padding-right: 1em;
 
-					&::-webkit-scrollbar {
-						width: 0.5em;
-					}
-
-					&::-webkit-scrollbar-track {
-						background: var(--sbtl-bg);
-					}
-
-					&::-webkit-scrollbar-thumb {
-						background-color: var(--sbtl-scrollbar-thumb);
-						border-radius: 0.25em;
-						border: 0.125em solid var(--sbtl-bg);
-					}
-
-					&::-webkit-scrollbar-thumb:hover {
-						background-color: var(--sbtl-scrollbar-thumb-hover);
-					}
-
-					&::-webkit-scrollbar-thumb:active {
-						background-color: var(--sbtl-scrollbar-thumb-hover);
-					}
-
-					&::-webkit-scrollbar-thumb:window-inactive {
-						background-color: var(--sbtl-scrollbar-thumb-hover);
-					}
-
-					&::-webkit-scrollbar-button {
-						display: none;
-					}
+					@include scroll-area;
 				}
 
 			}

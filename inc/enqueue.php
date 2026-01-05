@@ -113,9 +113,9 @@ function sbtl_scripts() {
 
 	wp_enqueue_script( 'sbtl-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), SBTL_VERSION, true );
 
-	wp_enqueue_script('sbtl-typeahead', get_template_directory_uri() . '/js/vendor/jquery.typeahead.min.js', array('jquery'), SBTL_VERSION, true);
+	//wp_enqueue_script('sbtl-typeahead', get_template_directory_uri() . '/js/vendor/jquery.typeahead.min.js', array('jquery'), SBTL_VERSION, true);
 
-	wp_enqueue_script('sbtl-search', get_template_directory_uri() . '/js/search.js', array('jquery', 'sbtl-typeahead'), SBTL_VERSION, true);
+	//wp_enqueue_script('sbtl-search', get_template_directory_uri() . '/js/search.js', array('jquery', 'sbtl-typeahead'), SBTL_VERSION, true);
 
 	wp_enqueue_script('sbtl-accordions', get_template_directory_uri() . '/js/accordions.js', array(), SBTL_VERSION, true);
 
@@ -126,6 +126,13 @@ function sbtl_scripts() {
 			'sbtl-router', 
 			get_template_directory_uri() . '/js/router.js', 
 			array( '@wordpress/interactivity', '@wordpress/interactivity-router' ), 
+			SBTL_VERSION 
+		);
+
+		wp_enqueue_script_module( 
+			'sbtl-search-interactive', 
+			get_template_directory_uri() . '/js/search-interactive.js', 
+			array( '@wordpress/interactivity', 'sbtl-router' ), 
 			SBTL_VERSION 
 		);
 	}
