@@ -234,7 +234,14 @@ function sbtl_parent_menu_dropdown( $item_output, $item, $depth, $args ) {
 
 
 function sbtl_check_nav_for_lang_switcher() {
+    if ( ! has_nav_menu( 'primary' ) ) {
+        return '';
+    }
+
     $menu_locations = get_nav_menu_locations();
+    if ( empty( $menu_locations['primary'] ) ) {
+        return '';
+    }
     $menu = wp_get_nav_menu_object( $menu_locations['primary'] );
     if ($menu) {
         $menu_items = wp_get_nav_menu_items($menu->term_id);
