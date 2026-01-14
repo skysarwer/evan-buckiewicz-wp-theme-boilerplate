@@ -13,6 +13,10 @@ body {
 	
 }
 
+html {
+	@include scroll-area;
+}
+
 #page {
 	height: 100%;
 	position: relative;

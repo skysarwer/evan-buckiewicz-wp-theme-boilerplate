@@ -73,10 +73,12 @@
 }
 
 @mixin scroll-area {
-	overflow-y: auto;
 	scrollbar-width: thin;
 	scrollbar-color: var(--sbtl-scrollbar-thumb) var(--sbtl-bg);
 
+	&:not(html) {
+		overflow-y: auto;
+	}
 	&::-webkit-scrollbar {
 		width: 0.5em;
 	}

@@ -341,7 +341,7 @@
 				.sbtl-cover {
 					left: 0;
 					z-index: 0;
-					width: calc( 0.79 * (min(100vw, (var(--sbtl-max-width)) - 1rem) - var(--sbtl-spacing-default)) + max(0px, (100vw - var(--sbtl-max-width)) / 2) );
+					width: calc( 0.8 * (min(100vw, (var(--sbtl-max-width)) - 1rem) - var(--sbtl-spacing-default)) + max(0px, (100vw - var(--sbtl-max-width)) / 2) );
 				}
 
 				.entry-content{
