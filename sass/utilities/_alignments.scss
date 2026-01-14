@@ -35,14 +35,16 @@
 
 body .is-layout-constrained > .alignwide,
 .alignwide {
-	max-width: unset;
-	width: calc(100% + (var(--sbtl-spacing-content) * 2));
-	margin-left: calc(var(--sbtl-spacing-content) * -1) !important;
-	box-sizing: border-box;
+	@include not-in-layout-block {
+		max-width: unset;
+		width: calc(100% + (var(--sbtl-spacing-content) * 2));
+		margin-left: calc(var(--sbtl-spacing-content) * -1) !important;
+		box-sizing: border-box;
 
-	&.is-layout-constrained:not(.has-sidemenu .alignwide) {
-		padding-left: var(--sbtl-spacing-content);
-		padding-right: var(--sbtl-spacing-content);
+		&.is-layout-constrained:not(.has-sidemenu .alignwide) {
+			padding-left: var(--sbtl-spacing-content);
+			padding-right: var(--sbtl-spacing-content);
+		}
 	}
 }
 
@@ -53,23 +55,23 @@ body .is-layout-constrained > .alignwide,
 
 body .is-layout-constrained > .alignfull,
 .alignfull {
-	box-sizing: border-box;
-	// Default behavior: break out of total padding (content + default)
-	width: calc(100% + (var(--sbtl-spacing-total) * 2));
-	margin-left: calc(var(--sbtl-spacing-total) * -1) !important;
-	max-width: unset;
+	@include not-in-layout-block {
+		box-sizing: border-box;
+		// Default behavior: break out of total padding (content + default)
+		width: calc(100% + (var(--sbtl-spacing-total) * 2));
+		margin-left: calc(var(--sbtl-spacing-total) * -1) !important;
+		max-width: unset;
 
-	// Large screens: break out to viewport (full bleed)
-	@media screen and (min-width: 1100px) { 
-		width: 100vw;
-		width: 100cqw;
-		margin-left: calc(50% - 50vw) !important;
-		margin-left: calc(50% - 50cqw) !important;
+		// Large screens: break out to viewport (full bleed)
+		@media screen and (min-width: 1100px) { 
+			width: 100vw;
+			width: 100cqw;
+			margin-left: calc(50% - 50vw) !important;
+			margin-left: calc(50% - 50cqw) !important;
+		}
 	}
 } 
 
 .content-wrap {
 	@include content-wrap;
 }
-
-

@@ -107,3 +107,10 @@
 		display: none;
 	}
 }
+
+// Filter out Flex and Grid layout parents to prevent breakout breakage
+@mixin not-in-layout-block {
+	&:not(.is-layout-flex &):not(.is-layout-grid &) {
+		@content;
+	}
+}

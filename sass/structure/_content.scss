@@ -351,22 +351,23 @@
 					// .alignwide is handled automatically by --sbtl-spacing-content: 0
 
 					.alignfull { 
-						--sbtl-alignfull-left-bleed: calc(var(--sbtl-spacing-total) + max(0px, (100vw - var(--sbtl-max-width)) / 2));
-						--sbtl-alignfull-right-bleed: 0px;
+						@include not-in-layout-block {
+							--sbtl-alignfull-left-bleed: calc(var(--sbtl-spacing-total) + max(0px, (100vw - var(--sbtl-max-width)) / 2));
+							--sbtl-alignfull-right-bleed: 0px;
 
-						// Nested alignfull needs to break out of parent's right padding
-						& .alignfull {
-							--sbtl-alignfull-right-bleed: var(--sbtl-spacing-default);
+							// Nested alignfull needs to break out of parent's right padding
+							& .alignfull {
+								--sbtl-alignfull-right-bleed: var(--sbtl-spacing-default);
+							}
+
+							width: calc(100% + var(--sbtl-alignfull-left-bleed) + var(--sbtl-alignfull-right-bleed)) !important;
+							margin-left: calc(-1 * var(--sbtl-alignfull-left-bleed)) !important;
+							margin-right: calc(-1 * var(--sbtl-alignfull-right-bleed)) !important;
+							
+							// Add padding so content inside aligns with the text column
+							padding-left: var(--sbtl-alignfull-left-bleed) !important;
+							padding-right: var(--sbtl-spacing-default) !important;
 						}
-
-						width: calc(100% + var(--sbtl-alignfull-left-bleed) + var(--sbtl-alignfull-right-bleed)) !important;
-						margin-left: calc(-1 * var(--sbtl-alignfull-left-bleed)) !important;
-						margin-right: calc(-1 * var(--sbtl-alignfull-right-bleed)) !important;
-						
-						// Add padding so content inside aligns with the text column
-						padding-left: var(--sbtl-alignfull-left-bleed) !important;
-						padding-right: var(--sbtl-spacing-default) !important;
-						
 					}
 
 
@@ -469,16 +470,18 @@
 				.entry-content {
 					
 					.alignfull { 
-						--sbtl-alignfull-left-bleed: 0px !important;
-						--sbtl-alignfull-right-bleed: calc(var(--sbtl-spacing-total) + max(0px, (100vw - var(--sbtl-max-width)) / 2)) !important;
+						@include not-in-layout-block {
+							--sbtl-alignfull-left-bleed: 0px !important;
+							--sbtl-alignfull-right-bleed: calc(var(--sbtl-spacing-total) + max(0px, (100vw - var(--sbtl-max-width)) / 2)) !important;
 
-						// Nested alignfull
-						.alignfull {
-							--sbtl-alignfull-left-bleed: var(--sbtl-spacing-default) !important;
+							// Nested alignfull
+							.alignfull {
+								--sbtl-alignfull-left-bleed: var(--sbtl-spacing-default) !important;
+							}
+
+							padding-left: var(--sbtl-spacing-default) !important;
+							padding-right: var(--sbtl-alignfull-right-bleed) !important;
 						}
-
-						padding-left: var(--sbtl-spacing-default) !important;
-						padding-right: var(--sbtl-alignfull-right-bleed) !important;
 					}
 				}
 			}
