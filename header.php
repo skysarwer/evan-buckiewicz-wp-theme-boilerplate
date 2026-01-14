@@ -77,7 +77,7 @@ $post_type = get_post_type();
 			 */
 			wp_nav_menu(
 				array(
-					'theme_location' => 'menu-1',
+					'theme_location' => 'primary',
 					'container_class' => sbtl_check_nav_for_lang_switcher(),
 					'menu_id'        => 'primary-menu',
 					'menu_class'     => 'nav-menu',

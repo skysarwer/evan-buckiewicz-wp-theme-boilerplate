@@ -16,6 +16,7 @@ store( 'sbtl', {
                 return this.results.flatMap(group => group.items);
             },
             get selectedId() {
+                if ( this.selectedIndex === -1 ) return null;
                 const selected = this.flatResults[this.selectedIndex];
                 return selected ? selected.id : null;
             },
@@ -28,7 +29,6 @@ store( 'sbtl', {
 	},
 	actions: {
 		search: {
-			// Removed toggle action as it's handled by vanilla JS now
 			close: () => {
 				const state = store( 'sbtl' ).state.search;
 				state.isOpen = false;
@@ -82,7 +82,7 @@ store( 'sbtl', {
 									key: key.replace(/_/g, ' '), // Simple formatting
 									items: value
 								})).filter(group => {
-                                    // Filter out empty groups and groups containing non-objects (like the 'test' array of strings)
+                                    // Filter out empty groups and groups containing non-objects
                                     return Array.isArray(group.items) && group.items.length > 0 && typeof group.items[0] === 'object';
                                 });
 								
@@ -116,7 +116,9 @@ store( 'sbtl', {
                     search.scrollToSelected();
 				} else if ( event.key === 'ArrowUp' ) {
 					event.preventDefault();
-					state.selectedIndex = ( state.selectedIndex - 1 + flatResults.length ) % flatResults.length;
+					state.selectedIndex = state.selectedIndex === -1
+                        ? flatResults.length - 1
+                        : ( state.selectedIndex - 1 + flatResults.length ) % flatResults.length;
                     search.scrollToSelected();
 				} else if ( event.key === 'Enter' ) {
 					if ( state.selectedIndex >= 0 ) {

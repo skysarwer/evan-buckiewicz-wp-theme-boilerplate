@@ -235,7 +235,7 @@ function sbtl_parent_menu_dropdown( $item_output, $item, $depth, $args ) {
 
 function sbtl_check_nav_for_lang_switcher() {
     $menu_locations = get_nav_menu_locations();
-    $menu = wp_get_nav_menu_object( $menu_locations['menu-1'] );
+    $menu = wp_get_nav_menu_object( $menu_locations['primary'] );
     if ($menu) {
         $menu_items = wp_get_nav_menu_items($menu->term_id);
     } else {

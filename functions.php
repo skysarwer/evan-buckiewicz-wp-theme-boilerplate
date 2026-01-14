@@ -64,42 +64,34 @@ add_filter('block_editor_settings_all', 'sbtl_survey_lock_blocks', 10, 2);
  */
 function sbtl_setup() {
 	/*
-		* Make theme available for translation.
-		* Translations can be filed in the /languages/ directory.
-		* If you're building a theme based on sbtl, use a find and replace
-		* to change 'sbtl' to the name of your theme in all the template files.
-		*/
+	* Make theme available for translation.
+	* Translations can be filed in the /languages/ directory.
+	* If you're building a theme based on sbtl, use a find and replace
+	* to change 'sbtl' to the name of your theme in all the template files.
+	*/
 	load_theme_textdomain( 'sbtl', get_template_directory() . '/languages' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
 
 	/*
-		* Let WordPress manage the document title.
-		* By adding theme support, we declare that this theme does not use a
-		* hard-coded <title> tag in the document head, and expect WordPress to
-		* provide it for us.
-		*/
-	//add_theme_support( 'title-tag' );
-
-	/*
-		* Enable support for Post Thumbnails on posts and pages.
-		*
-		* @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
-		*/
+	* Enable support for Post Thumbnails on posts and pages.
+	*
+	* @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
+	*/
 	add_theme_support( 'post-thumbnails' );
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'menu-1' => esc_html__( 'Primary', 'sbtl' ),
+			'primary' => esc_html__( 'Primary', 'sbtl' ),
 		)
 	);
 
 	/*
-		* Switch default core markup for search form, comment form, and comments
-		* to output valid HTML5.
-		*/
+	* Switch default core markup for search form, comment form, and comments
+	* to output valid HTML5.
+	*/
 	add_theme_support(
 		'html5',
 		array(
@@ -113,49 +105,8 @@ function sbtl_setup() {
 		)
 	);
 
-	// Set up the WordPress core custom background feature.
-	/*add_theme_support(
-		'custom-background',
-		apply_filters(
-			'sbtl_custom_background_args',
-			array(
-				'default-color' => 'ffffff',
-				'default-image' => '',
-			)
-		)
-	);*/
-
-	// Add theme support for selective refresh for widgets.
-	//add_theme_support( 'customize-selective-refresh-widgets' );
-
-	/**
-	 * Add support for core custom logo.
-	 *
-	 * @link https://codex.wordpress.org/Theme_Logo
-	 */
-	/*add_theme_support(
-		'custom-logo',
-		array(
-			'height'      => 250,
-			'width'       => 250,
-			'flex-width'  => true,
-			'flex-height' => true,
-		)
-	);*/
 }
 add_action( 'after_setup_theme', 'sbtl_setup' );
-
-/**
- * Set the content width in pixels, based on the theme's design and stylesheet.
- *
- * Priority 0 to make it available to lower priority callbacks.
- *
- * @global int $content_width
- */
-function sbtl_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'sbtl_content_width', 640 );
-}
-add_action( 'after_setup_theme', 'sbtl_content_width', 0 );
 
 /**
  * Custom template tags for this theme.
@@ -229,21 +180,6 @@ require get_template_directory() . '/inc/languages.php';
 //require get_template_directory() . '/inc/woocommerce.php';
 
 /**
- * Add metabox to pages allowing the title to be hidden.
- */
-function add_hide_title_metabox() {
-    add_meta_box(
-        'hide_title_metabox', // Metabox ID
-        'Hide Title', // Metabox title displayed in admin
-        'render_hide_title_metabox', // Callback function to render the metabox
-        array( 'page' ), // Post types where this metabox appears (pages only)
-        'side', // Context: where to display (normal, advanced, or side)
-        'default' // Priority (high, core, default, or low)
-    );
-}
-add_action( 'add_meta_boxes', 'add_hide_title_metabox' );
-
-/**
  * Filter to remove terms marked as 'hidden' from being displayed.
  * This allows administrators to create tags/categories that are used
  * for organization but not shown to site visitors.
@@ -265,6 +201,22 @@ function filter_get_the_tags( $terms ) {
 }
 
 add_filter( 'get_the_terms', 'filter_get_the_tags', 10, 3 );
+
+/**
+ * Add metabox to pages allowing the title to be hidden.
+ */
+function add_hide_title_metabox() {
+    add_meta_box(
+        'hide_title_metabox', // Metabox ID
+        'Hide Title', // Metabox title displayed in admin
+        'render_hide_title_metabox', // Callback function to render the metabox
+        array( 'page' ), // Post types where this metabox appears (pages only)
+        'side', // Context: where to display (normal, advanced, or side)
+        'default' // Priority (high, core, default, or low)
+    );
+}
+add_action( 'add_meta_boxes', 'add_hide_title_metabox' );
+
 
 /**
  * Render the hide title metabox content.
