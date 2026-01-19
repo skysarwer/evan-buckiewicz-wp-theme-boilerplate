@@ -3,8 +3,11 @@
     --parvus-transition-timing-function: cubic-bezier(0.4, 0, 0.22, 1);
     --parvus-overlay-color: rgba(0, 0, 0, 0.86);
     --parvus-button-text: hsl(0, 0%, 100%);
-    --parvus-loader-background-color: $color__accent-light;
-    --parvus-loader-color: $color__accent;
+    --parvus-overlay-text-color: #ffffff;
+    --parvus-loader-background-color: #ddd;
+    --parvus-loader-color: #111111;
+    --parvus-zoom-indicator-bg: #111111;
+    --parvus-caption-font: inherit;
   }
   
   /**
@@ -17,7 +20,7 @@
   }
   .parvus-zoom__indicator {
     align-items: center;
-    background-color: $color__text-main;
+    background-color: var(--parvus-zoom-indicator-bg);
     color: var(--parvus-button-text);
     justify-content: center;
     line-height: 1;
@@ -181,7 +184,7 @@
   }
 
   .parvus__slide .parvus__caption, .parvus__counter {
-    font-family: $font__thin;
+    font-family: var(--parvus-caption-font);
     text-align: center;
     line-height: 1.5em;
   }
@@ -237,7 +240,7 @@
     visibility: hidden;
   }
   .parvus__slide .parvus__caption {
-    color: var(--palette-white);
+    color: var(--parvus-overlay-text-color);
     margin-top: 2em;
     will-change: transform, opacity;
     line-height: 1.25em;
@@ -337,7 +340,7 @@
     will-change: transform, opacity;
     z-index: 7;
     width: 1.85em;
-    color: var(--palette-white);
+    color: var(--parvus-overlay-text-color);
     border: 1.5px solid #fff;
     background: transparent;
     border-radius: 50%;
@@ -387,7 +390,7 @@
   .parvus__counter {
     position: relative;
     z-index: 7;
-    color: var(--palette-white);
+    color: var(--parvus-overlay-text-color);
   }
   @media screen and (prefers-reduced-motion: no-preference) {
     .parvus__counter {

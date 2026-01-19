@@ -78,6 +78,11 @@
 
     --sbtl-btn-shadow-accent: #A69E7D;
     --sbtl-submenu-bg: var(--palette-light-yellow);
+
+    // Parvus var configs
+    --parvus-loader-background-color: var(--palette-light-pink);
+    --parvus-loader-color: var(--palette-saturated-orange);
+    --parvus-zoom-indicator-bg: var(--sbtl-text-body);
 }
 
 $color__background-body: var(--sbtl-bg);
