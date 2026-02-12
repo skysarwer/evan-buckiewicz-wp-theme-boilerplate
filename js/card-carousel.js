@@ -6,10 +6,10 @@ jQuery(document).ready(function($) {
 
     for (var i = 0; i < owl_containers.length; i++) {
 
-        var hasHeirarchy = false;    
+        var hasHierarchy = false;    
 
-        if (owl_containers[i].classList.contains('has-heirarchy')) {
-            hasHeirarchy = true;
+        if (owl_containers[i].classList.contains('has-hierarchy')) {
+            hasHierarchy = true;
         }
         
 
@@ -52,13 +52,13 @@ jQuery(document).ready(function($) {
                         center: false,
                     },
                     1100: {
-                        items: hasHeirarchy ? 2 : 3,
+                        items: hasHierarchy ? 2 : 3,
                     },
                     1600: {
-                        items: hasHeirarchy ? 3 : 4,
+                        items: hasHierarchy ? 3 : 4,
                     },
                     3000: {
-                        items: hasHeirarchy ? 4 : 5,
+                        items: hasHierarchy ? 4 : 5,
                     }
                 },
                 navText: [

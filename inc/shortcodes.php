@@ -122,7 +122,7 @@ function sbtl_article_card_carousel($atts, $content = null, $tag = '') {
     }
 
     if ($isHierarchicalPage) {
-        $grid_class .= ' has-heirarchy';
+        $grid_class .= ' has-hierarchy';
     }
 
     $level = intval($atts['level']);
